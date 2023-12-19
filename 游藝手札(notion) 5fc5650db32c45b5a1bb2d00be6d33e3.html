@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>游藝手札(notion-html)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5fc5650d-b32c-45b5-a1bb-2d00be6d33e3" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_camille_pissarro_1896.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📗</span></div><h1 class="page-title">游藝手札(notion-html)</h1><p class="page-description"></p></header><div class="page-body"><p id="bdbcd2c3-19eb-4408-8d35-4eb6325b19d4" class=""><a href="https://cbetaonline.dila.edu.tw/zh/Y0039">印順法師</a>：「自己如水面的一片落葉，向前流去，流去。忽而停滯，又忽而團團轉。有時激起了浪花，為浪花所掩蓋，而又平靜了，還是那樣的流去。為什麼會這樣？不但落葉不明白，落葉那樣的自己也不太明白。只覺得... 自己的一切，都在無限複雜的因緣中推移。」耳順之年的自己，有幸心閒而游藝，靜享美好的浮光，些許也是因緣推移中的小小落葉…</p><p id="1cfe9269-2951-4563-8bae-bfbfc09ae29b" class="">
+</p><hr id="3e16c734-18c2-4edc-92ed-96f7cf91c83b"/><div id="fc78f6bf-7e0e-4512-a330-3c6a2a918f72" class="column-list"><div id="cefefaf5-3360-4f00-889a-12bd5961d6ce" style="width:33.33333333333333%" class="column"><ul id="fd536597-ea48-499e-a8b2-32e8a6d3c30f" class="toggle"><li><details open=""><summary>【線上閱讀】</summary><ul id="ee18e7ae-9212-4228-a574-de353aa948cf" class="block-color-gray bulleted-list"><li style="list-style-type:disc"><a href="http://www.haodoo.net/">好讀電子書</a></li></ul></details></li></ul></div><div id="9b70644a-9812-4630-905f-f9e95a8c5ad0" style="width:33.33333333333333%" class="column"><ul id="b167dc52-4e24-4d55-b2c6-9c160700ba29" class="block-color-pink toggle"><li><details open=""><summary>【日語學堂】</summary><figure id="7e983f87-8f0b-4a2a-b423-b4579cc27283" class="link-to-page"><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3/%E6%95%99%E5%AD%B8%E7%B6%B2,%E6%9C%97%E8%AE%80%E2%80%A6%207e983f878f0b4a2ab423b4579cc27283.html"><span class="icon">🪁</span>教學網,朗讀…</a></figure><figure id="841af350-3142-4dfd-975e-cde5b44b9a7e" class="link-to-page"><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3/NHK%E2%80%A6%20841af35031424dfd975ecde5b44b9a7e.html"><span class="icon">🎨</span>NHK…</a></figure><ul id="eb8e2089-21b9-4984-ba8d-3e948eeaf1fd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.notion.so/4885c51a92c74d14abbb74af638e2190?pvs=21">例文,発音辞書…</a></li></ul></details></li></ul></div><div id="b051b2e3-b28b-4b6f-8305-945f351c00f6" style="width:33.333333333333364%" class="column"><ul id="871fe9fc-c29a-4645-9127-34a7db356ec8" class="block-color-teal toggle"><li><details open=""><summary>【網頁探索,心得】</summary><figure id="4ff69cd5-8ee7-4c61-a33d-31371865e99c" class="link-to-page"><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3/%E8%BB%9F%E9%AB%94,Notion%E2%80%A6%204ff69cd58ee74c61a33d31371865e99c.html"><span class="icon">🗺️</span>軟體,Notion…</a></figure><figure id="a3a5e52b-877b-4691-9a08-90e7f62b62b6" class="link-to-page"><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3/%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20a3a5e52b877b46919a0890e7f62b62b6.html"><span class="icon">🪂</span>心得整理-1</a></figure><figure id="dd47dad7-0136-4d76-a38f-6be2a03ef378" class="link-to-page"><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3/%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%20dd47dad701364d76a38f6be2a03ef378.html"><span class="icon">📏</span>心得整理-2</a></figure></details></li></ul></div></div><div id="c6ac1bcf-bd45-4627-8ba0-f3f75f3a4597" class="column-list"><div id="b8d2df97-64ac-4d08-a260-833f82e463ba" style="width:33.33333333333333%" class="column"><ul id="1c7b7e63-996b-4d79-85b8-f66ff8a4d0e4" class="block-color-blue toggle"><li><details open=""><summary>【步道漫遊】</summary><ul id="d585d75d-d977-4946-aa5d-922d2dd09f61" class="block-color-gray bulleted-list"><li style="list-style-type:disc"><a href="https://hiking.biji.co/">健行筆記</a></li></ul><ul id="7efa94a0-6f08-4515-8b97-9554935f4ac9" class="bulleted-list"><li style="list-style-type:disc"><a href="http://tonyhuang39.com/">Tony旅記</a></li></ul><ul id="12eef297-8511-4f5a-b3f8-325fe0f52fdd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://smiletaiwan.cw.com.tw/">微笑臺灣</a></li></ul><ul id="8af0feea-9e92-4570-9a4c-0da16fa6ccbf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://sshare.pixnet.net/blog/post/225027608">百岳分布</a></li></ul></details></li></ul></div><div id="f39787d6-6b59-479d-a88a-c17182dbf6ac" style="width:33.33333333333333%" class="column"><ul id="f345e5b4-cb42-44a7-ba96-32d0f348e69e" class="toggle"><li><details open=""><summary>【notion習作】</summary><ul id="3114a0d3-a16f-4376-8b4e-a7957f5cadb1" class="bulleted-list"><li style="list-style-type:disc"><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3.html">游藝手札(n)</a></li></ul><ul id="1410da2f-f625-4ee5-b459-7af0477804b0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.notion.so/I-2014-12-2018-12-e9edd640485c4670a962619539dce12f?pvs=21"><strong>我的步道行旅I</strong></a><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3.html">(n)</a></li></ul><ul id="d9d216c1-2572-4aa6-bf62-1a7fae87a85d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.notion.so/II-2019-01-2022-03-16e4eebcc06242b29a10047840dd5c88?pvs=21"><strong>我的步道行旅II</strong></a><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3.html">(n)</a></li></ul><ul id="5d67b8fd-21e3-4c63-bf1c-ea44b3475a9a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.notion.so/ce87543a269147d8b687d60064547cbc?pvs=21">步道花卉蟲鳥</a><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3.html">(n)</a></li></ul><ul id="f520cb44-ba68-4d1d-9966-886f72ea9234" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.notion.so/d491cc9dc66a434ab6b16f85a5a5f480?pvs=21">【蓉蓉的手作皮件-分類】(n)</a></li></ul></details></li></ul></div><div id="b9ee3dbd-332a-4da3-90c6-441aa8efb851" style="width:33.33333333333332%" class="column"><ul id="4ce26e2a-1a8b-4485-8b06-b9e62277e3c0" class="toggle"><li><details open=""><summary>【notion-html習作】</summary><ul id="71efdafb-1d67-45ef-9713-de1268bf0f08" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/notion-html/%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%203234c11b2e6f4021ac65a8dac2fce0e7.html">游藝手札(n-h)</a></li></ul><ul id="2f36430b-fa41-4361-90ed-52cebe600fd7" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/trail-I/%E6%88%91%E7%9A%84%E6%AD%A5%E9%81%93%E8%A1%8C%E6%97%85I%20(2%20bef03.html"><strong><strong>我的步道行旅I(n-h)</strong></strong></a></li></ul><ul id="ca0ce569-5f95-4281-ab72-691818c0cd37" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/trail-II/%E6%88%91%E7%9A%84%E6%AD%A5%E9%81%93%E8%A1%8C%E6%97%85II%20(%2011847.html"><strong><strong>我的步道行旅II(n-h)</strong></strong></a></li></ul><ul id="76e205da-cce2-4786-a93e-735d7bbf1888" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/trail-flower/%E6%AD%A5%E9%81%93%E8%8A%B1%E5%8D%89%E8%9F%B2%E9%B3%A5%2073f78.html">步道花草蟲鳥</a><a href="https://kmhgit.github.io/trail-flower/%E6%AD%A5%E9%81%93%E8%8A%B1%E5%8D%89%E8%9F%B2%E9%B3%A5%2073f78.html"><strong><strong>(n-h</strong></strong></a><strong><strong>)</strong></strong></li></ul></details></li></ul></div></div><div id="a1586c83-206b-4933-80c2-4ec6b0104441" class="column-list"><div id="0ceadcc6-c53c-4564-b10e-daca7ce26083" style="width:33.33333333333333%" class="column"><ul id="9e013e21-0d2f-4365-b222-8834b41c5533" class="toggle"><li><details open=""><summary>【html習作-1】</summary><ul id="6ea63b39-1dd5-4e16-82bb-b4565f8e2294" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/gugu-page/gugu-home.html"><strong><strong>日本雞-咕咕網頁</strong></strong></a></li></ul><ul id="e0365728-878e-4302-95f1-cdbc9a4a21d3" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/taiping-page/taiping-home.html"><strong><strong>太平國小-61.07</strong></strong></a></li></ul><ul id="4cea7e10-5276-4f8d-ad50-f73fb98880db" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/kmh-page/bemyself.html"><strong><strong>心閒游藝-隨手札記</strong></strong></a></li></ul><ul id="dd6817a6-facd-41c8-a0cf-a7eae08efc00" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/guangyou-page/guangyou-home.html"><strong><strong>光悠誕生-滿月</strong></strong></a></li></ul><ul id="da9eb213-cc36-4a36-be8e-311a167a08bb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/chingching-page/chingching-home.html"><strong><strong>憶晴誕生-收涎</strong></strong></a></li></ul></details></li></ul></div><div id="610a3735-727a-43f8-8325-53ced6b9d4a5" style="width:33.33333333333333%" class="column"><ul id="f46ed94b-229b-4ce1-a2b7-b8fa2228bcac" class="toggle"><li><details open=""><summary>【html習作-2】</summary><ul id="1afb06c8-bac4-416b-b383-9a296d54d55a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/carousel-elsa42/%E8%BC%AA%E6%92%AD-%E5%9F%BA%E7%A4%8E%E6%96%87%E6%B3%9542(Elsa).html">輪播-基礎文法</a></li></ul><ul id="180e4730-63d3-4c5a-a6f6-194fa4193084" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/carousel-elsa01-30/%E8%BC%AA%E6%92%AD-%E4%B8%AD%E7%B4%9A%E6%96%87%E6%B3%9501-30(Elsa).html">輪播-中級文法01</a></li></ul><ul id="ce401476-e07c-4d1e-b135-9884e51ce711" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/openbook-elsa42/elsa42.html">翻頁-基礎文法</a></li></ul><ul id="b5c8cb08-915d-4857-ba85-1c1647b44c53" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/openbook-elsa31-60/elsa31-60.html">翻頁-中級文法02</a></li></ul></details></li></ul></div><div id="71af39c5-7a03-41b9-b3c0-b22c050a7494" style="width:33.33333333333334%" class="column"><ul id="c8598cab-0879-40ae-939e-20de4b9b1ec8" class="toggle"><li><details open=""><summary>【電子書製作】</summary><ul id="39cb0acd-17ea-47fb-bdc3-037009270c99" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/jung-menu/%E8%93%89%E8%93%89%E7%9A%84%E8%8F%9C%E5%96%AE.epub">蓉蓉的菜單.epub</a></li></ul><ul id="38416700-f2f0-40e0-abd5-d9c70852c88a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kmhgit.github.io/ebook-maker/djdgi-4tdyc.html">New簡明-電子書製作流程初探(html)</a><figure id="b2bed44a-8f23-4938-a0dd-30f8b4480aed" class="link-to-page"><a href="https://www.notion.so/b2bed44a8f234938a0dd30f8b4480aed?pvs=21"><img class="icon" src="https://www.notion.so/icons/glasses_orange.svg"/>簡明-電子書製作與上網流程</a></figure></li></ul></details></li></ul></div></div><div id="d1b132c3-94b3-4484-a839-c1cfda214efd" class="column-list"><div id="0649d0e9-38e7-4f4e-94b5-2fd7e865615c" style="width:33.33333333333333%" class="column"><ul id="559e2d17-d298-40dc-8631-0a27642a26dd" class="block-color-purple toggle"><li><details open=""><summary>【日本藝術,文學,導航】</summary><ul id="e03175a6-3397-4390-a9eb-9b2bf24382fe" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.navitime.co.jp/">NAVITIME-日本導航</a></li></ul><figure id="1e365b2d-a92d-4e15-ae66-6e3c17e18b9e" class="link-to-page"><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3/%E6%B5%AE%E4%B8%96%E7%B5%B5%201e365b2da92d4e15ae666e3c17e18b9e.html"><span class="icon">⛩️</span>浮世絵</a></figure><figure id="3891f3eb-b3bc-42d3-9fa3-3ee9c1205cb5" class="link-to-page"><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3/%E6%97%A5%E6%9C%AC%E6%96%87%E5%AD%B8%203891f3ebb3bc42d39fa33ee9c1205cb5.html"><span class="icon">🥏</span>日本文學</a></figure></details></li></ul></div><div id="1363c219-2d8d-42a1-a8b4-21beb894f896" style="width:33.33333333333334%" class="column"><ul id="02a449f0-1e89-47db-bc07-19ed7218a29c" class="toggle"><li><details open=""><summary>【聆聽天籟】</summary><figure id="dbc0b08d-d042-40e3-99a4-660731f277ae" class="link-to-page"><a href="%E6%B8%B8%E8%97%9D%E6%89%8B%E6%9C%AD(notion)%205fc5650db32c45b5a1bb2d00be6d33e3/%E5%8F%A3%E8%A2%8B%E9%9F%B3%E6%A8%82%20dbc0b08dd04240e399a4660731f277ae.html"><span class="icon">💌</span>口袋音樂</a></figure></details></li></ul></div><div id="f821f1a4-11aa-409a-bc73-05e218e7bbca" style="width:33.33333333333333%" class="column"><ul id="014fb364-f4be-429a-b31c-f808d5c319e7" class="toggle"><li><details open=""><summary>【佳言拾掇】</summary><figure id="07ec3ebe-55f6-48a5-ad1e-79832cd9a0d7" class="link-to-page"><a href="https://www.notion.so/07ec3ebe55f648a5ad1e79832cd9a0d7?pvs=21"><img class="icon" src="https://www.notion.so/icons/power_yellow.svg"/>佛經,哲理,佳言</a></figure></details></li></ul></div></div><div id="eba86feb-685e-4c0a-9505-5070bd370824" class="column-list"><div id="f8960526-fcf8-4741-9064-157c86da79a1" style="width:33.333333333333336%" class="column"><figure id="bc885cee-861d-4fdd-bef7-e86b292f25dc" class="link-to-page"><a href="https://www.notion.so/Youtube-bc885cee861d4fddbef7e86b292f25dc?pvs=21"><span class="icon">🕘</span>Youtube-行旅,日語歌曲</a></figure></div><div id="d6f5f37b-90c8-46df-a2a5-ff8a7cdaf658" style="width:33.333333333333336%" class="column"><figure id="13b4104a-dd8d-47ab-888e-4e6ce3289dfe" class="link-to-page"><a href="https://www.notion.so/Homepage-13b4104add8d47ab888e4e6ce3289dfe?pvs=21"><span class="icon">🎉</span>蓉蓉Homepage</a></figure></div><div id="27fb3134-27b5-418a-a7fb-ca23efaa199d" style="width:33.33333333333333%" class="column"><figure id="32d0baca-ab2b-4a02-8cca-ebb196662a1c" class="link-to-page"><a href="https://www.notion.so/notion-32d0bacaab2b4a028ccaebb196662a1c?pvs=21"><span class="icon">🎉</span>notion-簡易講義</a></figure></div></div><p id="5aca0cd2-64c4-4a24-8af6-c8e9a68e7bd3" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
