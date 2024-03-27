@@ -1,0 +1,702 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>心得整理-1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="edaea098-09b2-4db3-82a0-18b5f2a20b30" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🪂</span></div><h1 class="page-title">心得整理-1</h1><p class="page-description"></p></header><div class="page-body"><hr id="d6dcb8e8-cf9f-4ece-80e7-ffc7256423e1"/><h2 id="c1ebaa0a-7398-423b-8bad-5715f577113b" class="">ㄧ、HTML撰寫工具<br/>     <br/></h2><p id="500cc12b-32f1-45a7-bdb2-25a189d83a0a" class="">（ㄧ）撰寫HTML的工具：        <a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E5%B9%B3%E5%8F%B0">跨平台</a><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E7%B7%A8%E8%BC%AF%E5%99%A8">文字編輯器</a></p><p id="b61a805d-f69c-49bb-a8f8-7cc5b6aea1b3" class="">           1. Visual Studio Code（簡稱 VS Code）:  <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p><p id="dfabc59b-f9e1-4358-a0bd-e051a21ab2a4" class="">           2. Sublime Text:  <a href="https://www.sublimetext.com/">https://www.sublimetext.com/</a></p><p id="f28414aa-ee36-497d-844e-f972b66e122b" class="">
+</p><p id="9f7b12d4-34c1-4bf3-9189-1394f25dff9c" class="">（二）將完成的HTML推上網的平台和指令工具：GitHub &amp; Terminal</p><p id="2f86a1d3-ef2d-4b9a-8322-8a4457cfa2a9" class="">           1. GitHub平台：             <a href="https://github.com/">https://github.com/</a></p><p id="232f19d6-a9d1-4708-ba78-339715e54c3d" class="">           2. Terminal指令工具：  </p><p id="59bc1e44-a695-4849-b901-b5e6f8e87bd7" class="">                    a 按Windows 鍵 + X，</p><p id="6119a916-ccd1-49f0-a330-9242b1ea1dce" class="">                    b 跳出選單，選擇「命令提示字元」</p><hr id="e245426b-cd93-41df-ba6e-504974c84ac8"/><h2 id="c65d66e8-fa95-421b-ae81-71b6202ae533" class="">二、利用GitHub &amp; Terminal推HTML頁面上網站的工具與過程</h2><p id="cc3cf3b4-b3f4-440e-8e61-1c5b7d8c1181" class="">
+</p><p id="fb331e4d-7923-49f7-a309-59b6b1535da6" class="">（ㄧ）將HTML推上網的過程：</p><p id="3b35a54b-60c3-46e1-ae9d-6ca0f1fb0c39" class="">           1. 在桌面開啟已完成的HTML所在的文件夾</p><p id="3dd6df78-0630-4e3c-b373-a119937e0998" class="">               例如: bemyself.html存在C:\Users\My Computer\Desktop\我的專屬網頁...\kmhpage文件夾中，開啟kmhpage文件夾，即可看到bemyself.html</p><p id="4730d02c-ed2c-4192-be46-073349f27580" class="">           2. 按Chrome上網開啟GitHub平台 <a href="https://github.com/">https://github.com/</a></p><p id="3c66b54e-7324-47d8-8f1c-2da8b07a1949" class="">
+</p><figure id="e6fe7cc0-854b-4788-bcbb-671071adb88e" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/github.jpg"><img style="width:551px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/github.jpg"/></a></figure><p id="7b82571b-7c98-4c30-baec-533f77776906" class="">                     </p><p id="84864e26-9a53-4195-9e4e-c4616f8b4811" class="">                      a 選右上角&lt;sing in&gt;，出現</p><figure id="86f6430f-e91b-4edd-bfbc-2c2ce92e5058" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/github-singin.jpg"><img style="width:401px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/github-singin.jpg"/></a></figure><p id="a9c7c0e4-dc24-45fa-8338-121a42927dd9" class="">                      b 輸入username : kmhgit(註冊時已設定)</p><p id="96f4457a-5ebc-4a23-93be-68dcc97d0231" class="">                      c 輸入password (或 b&amp;c 均已defalt)，按&lt;Sign in&gt;                          </p><figure id="ea37fecb-f736-4503-a1a0-b6f891ed2960" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/start-project.jpg"><img style="width:468px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/start-project.jpg"/></a></figure><p id="0628b9bc-1c2b-4bbb-815a-58d8a038d3d3" class="">                             . 選【Start a project】</p><p id="9c5922da-be59-462b-8c8d-ea41097e6192" class="">                             . 輸入Repository name,如kmhpage</p><figure id="a6a1554c-5682-422f-8d71-1856b747dc70" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/keyin-project.jpg"><img style="width:402px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/keyin-project.jpg"/></a></figure><p id="64ac172e-699a-4410-b486-1b05df7471c3" class="">                            . 按【Create repository】 </p><p id="fac8af43-4065-4289-999d-bc8d478fcb42" class="">                            . 出現kmhgit/kmhpage &lt;Public&gt; <strong>畫面</strong></p><p id="a0c8d1d1-cf18-4d31-bc50-aa02c472302e" class="">                                   ( kmhgit是username，kmhpage<strong>是</strong>Repository name）</p><figure id="e293cf4a-6fe4-402e-8e68-ab307342e8fa" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/kmhgit-kmhpage.jpg"><img style="width:499px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/kmhgit-kmhpage.jpg"/></a></figure><p id="04e369ea-4fc9-4a29-9b17-f121fa1d9566" class="">
+</p><p id="2c33cfe3-311b-46a3-a6e5-4819cdb359c4" class="">            3. 開啟「命令提示字元」(cmd-<strong><strong>Command Prompt</strong></strong>)，步驟：</p><p id="789815c9-0525-4c3c-8996-c1a7c99aeebc" class="">                      a 按 Windows 鍵 + X </p><figure id="23dff51d-4109-41c9-b843-5361e7aa344f" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/Untitled.png"><img style="width:244px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/Untitled.png"/></a></figure><p id="0a297be1-02db-40da-b27f-f10761d18557" class="">                         (另參— 1「<a href="https://www.590103.idv.tw/blog/%E5%9C%A8windows-10%E4%B8%AD%E6%89%93%E9%96%8B%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E5%AD%97%E5%85%83%E7%9A%8410%E7%A8%AE%E6%96%B9%E5%BC%8F"><strong><strong>打開命令提示字元的10種方式</strong></strong></a><strong><strong>」</strong></strong></p><p id="27bce22d-0653-4720-83e4-e89dd98958c5" class="">                                      <strong><strong>2</strong></strong> <a href="https://helpcenter.trendmicro.com/zh-tw/article/tmka-07530/">移動滑鼠到螢幕左下角Windows視窗符號，按滑鼠右鍵</a>)</p><p id="918ad6e6-705d-4bc4-8f93-e67797f4a63a" class="">                      b 跳出下列選單，選擇「命令提示字元」</p><figure id="38d11876-d2d3-4c3e-a953-db8e9ca2b691" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/winkeyx.png"><img style="width:308px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/winkeyx.png"/></a></figure><p id="4109b634-277f-4a9b-b3ce-75167029fd9a" class="">
+</p><p id="398a1d7f-2dd4-478b-96a6-eb3f6fcf7283" class="">                      c 因前面1.已「開啟已完成的HTML所在的文件夾」，</p><p id="50365979-c182-4238-965a-3caf040d7804" class="">                         所以Terminal畫面會是C:\Users\MyComputer\Desktop\我的專屬網頁...\kmh-page&gt;＿</p><p id="7390da2f-0424-4cde-af8d-3e915065e553" class="">                         準備接受輸入指令狀態</p><figure id="373af70b-932b-44b2-b3d1-e0d0d300dcd7" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/Terminal%E6%8C%87%E4%BB%A4%E5%B7%A5%E5%85%B7.jpg"><img style="width:714px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/Terminal%E6%8C%87%E4%BB%A4%E5%B7%A5%E5%85%B7.jpg"/></a></figure><p id="f36b2345-7fe7-45ef-bc8c-3ac1efda8657" class="">                      d 如果未開啟HTML所在的文件夾，則在</p><p id="746d365f-d416-481c-b54d-71cc2fbf3973" class="">                          Terminal &gt; cd  C:\Users\MyComputer\Desktop\我的專屬網頁...\kmh-page〈enter〉</p><p id="7805f1c0-07c4-412f-acf1-6b7b03ab1b5d" class="">                          開啟該HTML所在的文件夾</p><p id="aa01ccf9-2fd5-4de2-a5f3-4d8c6af8785e" class="">                      e 將GitHub…or create a new repository on the command line下四行</p><p id="6a88f645-d4f5-4719-bb34-fa785bd5e2f6" class="">                               <mark class="highlight-orange">echo &quot;# newpage1&quot; &gt;&gt; README.md</mark></p><p id="2b28ee1b-9be8-4dea-885b-40354667a467" class=""><mark class="highlight-orange">                               git init </mark></p><p id="877445e0-37af-4f07-969b-d6dff9576cb6" class=""><mark class="highlight-orange">                               git add README.md</mark></p><p id="9fc12893-0e0d-44e0-8b39-4d764a052a7b" class=""><mark class="highlight-orange">                               git commit -m &quot;first commit&quot;</mark></p><p id="cb4d3354-6ea6-4ab8-8b05-d37daca39623" class="">                         複製、貼上—&gt; C:\Users\MyComputer\Desktop\我的專屬網頁...\kmh-page&gt;                                           〈enter〉</p><p id="fe28eb58-c183-451b-9352-5d818961bf2b" class="">                                              （執行順利，出現一串說明） </p><p id="6174f00f-8fb8-4bcb-a130-bf3f1ba187ae" class="">                      f 再將其餘三行</p><p id="bb10903c-f694-476c-991d-923c6161d54f" class="">                                <mark class="highlight-orange">git branch -M main</mark></p><p id="bdedf067-7c71-440b-8f8f-d8fe3ad4580b" class=""><mark class="highlight-orange">                          </mark><strong><mark class="highlight-orange">      git remote add origin https://github.com/kmhgit/newpage1.git</mark></strong></p><p id="a5aee25f-7ec9-4df7-b442-af1dd165967c" class=""><strong><mark class="highlight-orange">                                git push -u origin main</mark></strong></p><p id="559da74c-1cd1-4cd8-9d33-0f4be03b9c65" class="">                        複製、貼上—&gt;  C:\Users\MyComputer\Desktop\我的專屬網頁...\kmh-page&gt;〈enter〉</p><p id="a7ee32a8-2afb-4890-918b-a76297b276ba" class="">                                              ( 執行順利，出現一串說明）</p><p id="171cbf09-973a-4b64-a869-5914b4cac4e4" class="">
+</p><p id="a138338a-ad28-4df3-902a-9e064a9e538a" class="">                         1. 出現畫面，按〈Sing in with your browser〉 </p><figure id="330ba555-2cff-4cc1-ae3d-06c0798a733a" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/browser.png"><img style="width:606px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/browser.png"/></a></figure><p id="81bd9a5a-1da6-47ef-b1c0-23b91bfa01d2" class="">
+</p><p id="1bbff22e-be21-453f-a913-a2d7665d72c2" class="">                          2. Github通知建立成功畫面，按該頁面〈x〉關閉通知</p><figure id="61375383-6c37-400f-8dc3-435569dd8679" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/succeeded.png"><img style="width:561px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/succeeded.png"/></a></figure><p id="6f8349a1-d0fb-46a7-b35e-c8df4256d131" class="">
+</p><p id="5cb6169e-58a1-4ffd-96f9-00cde3f92aac" class="">                    * g 在C:\Users\MyComputer\Desktop\我的專屬網頁...\kmh-page&gt;＿</p><p id="cfac4484-14bb-4eaa-8d57-3686ed4ffba0" class="block-color-blue">                         輸入—&gt; git add *〈enter〉</p><p id="2afe33c9-5d11-4fcf-b799-ec9cbec93ba7" class="">                    * h 在C:\Users\MyComputer\Desktop\我的專屬網頁...\kmh-page&gt;＿</p><p id="4db5208d-1a84-4273-9a7a-c49e14ff7639" class="block-color-purple">                         輸入—&gt; git commit –m “add web page”〈enter〉</p><p id="62461eed-85aa-4360-a91a-be226e1f83b5" class="">                     * i 在C:\Users\MyComputer\Desktop\我的專屬網頁...\kmh-page&gt;＿</p><p id="30ba92c2-fb52-4aa8-a1b4-46e59fa1bdc4" class="block-color-teal">                         輸入—&gt; git push origin〈enter〉</p><p id="e37689bd-dae7-4c12-ad0d-bc87018e338a" class="">
+</p><p id="776ceb63-f614-41c4-9a1f-25dc649ad486" class="">                         1. 再次出現畫面，按〈Sing in with your browser〉 </p><figure id="7140dfc8-f91e-4891-926d-2e05359464db" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/browser.png"><img style="width:606px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/browser.png"/></a></figure><p id="78d951f5-3a1a-4336-b237-a7ef3510e69c" class="">
+</p><p id="9f2c5037-1071-46ee-9848-d11fd05875db" class="">                          2. Github通知完成畫面，按該頁面〈x〉關閉該通知</p><figure id="00c1c252-4d7d-4a24-a0c4-69ebe2b35f1c" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/succeeded%201.png"><img style="width:561px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/succeeded%201.png"/></a></figure><p id="7f516ec2-554f-4437-8105-13be5c32945a" class="">
+</p><p id="5bcf6ebe-3640-4dc0-83c7-a98c2b1f7391" class="">
+</p><p id="df2f0133-7ce3-4e60-891d-88a111d68dde" class="">                       J 1. 在GitHub畫面左上角，按&lt;重新整理&gt;</p><figure id="e1a789f3-65aa-4702-9301-475c2655fa4e" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/%E9%87%8D%E6%96%B0%E6%95%B4%E7%90%86.jpg"><img style="width:246px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/%E9%87%8D%E6%96%B0%E6%95%B4%E7%90%86.jpg"/></a></figure><p id="ba11daf7-1ae4-4460-932c-e0f286af1572" class="">                          2. 在&lt;code&gt;—&gt;&lt;Add file&gt;—&gt;&lt;Upload files&gt;下，將所有的檔案Upload </p><p id="68483572-fd5b-4a67-8aa5-fc6f34110a65" class="">                          3. 記得按&lt;<strong><strong>Commit changes</strong></strong>&gt;                        </p><p id="362bacbe-3130-4618-8d54-d41c65e23471" class="">
+</p><p id="dfddfa57-9abe-4c73-988c-69b1f99dd8a3" class="">                       k 在GitHub畫面，找到上方右側的〈settings〉，按〈settings〉</p><p id="b1db05fc-3590-4b25-a65f-4b729c56f741" class="">                       l  * 舊版 :  移動&lt;settings&gt;畫面到下方，找到&lt;GitHub pages&gt; </p><p id="02ff07e3-8855-4dbd-8fa6-77b7046acf94" class="">                         ** 新版：在&lt;settings&gt;左欄&lt;<strong><strong>Code and automation</strong></strong>&gt;下， 按&lt;pages&gt; **</p><p id="0a9aab8d-8c6a-432f-9b92-cb468b5b1d21" class="">                         按【None】後，出現main /None ，選【main】，按&lt;save&gt;</p><p id="28747cf4-b08d-42aa-9345-5a5ef4df6a97" class="">
+</p><p id="7943568a-2ae2-4cc3-837a-5d90d9a7ad42" class="">                     m 在GitHub畫面，按&lt;重新整理&gt;</p><p id="67665925-06a5-4061-8358-49c1f55929fa" class="">                      n GitHub pages告知已建置專案資料庫，完成網址連結</p><p id="a557d920-9850-463f-b4ea-17a10f566503" class="">                                https://kmhgit.github.io/kmh-page/</p><p id="b5c6f52c-8d4b-4fd6-a013-ea087efcd9bc" class="">                      o 連結該網址 https://kmhgit.github.io/kmh-page/</p><p id="c54ac5d4-5fd0-40b8-a138-c2739be607bc" class="">                         再將自己的網頁名bemyself.html複製貼在”/”後面，成為</p><p id="42b12ea9-1010-4590-9605-9c566001ff30" class="">                                <a href="https://kmhgit.github.io/newpage/bemyself.html">https://kmhgit.github.io/kmh-page/bemyself.html</a></p><p id="ad54b1b5-4653-499c-8045-8dd42f33304a" class="">                         網頁就發布成功！！(需等候些時)</p><p id="099f1f6b-7fe6-4956-ba54-33693cf05a2a" class="">
+</p><p id="c7561e95-3655-45e4-899c-26e55ade1fe5" class="">（二）a 在GitHub畫面左上角的&lt;&gt;code 的&lt;Add file&gt;</p><p id="56697465-78df-43f4-90f9-85187ab5f7e3" class="">              能Create new file / Upload files</p><p id="1a6d4abb-ef1c-440a-b80b-8dc757d12760" class="">              可將新增或修改後的檔案、圖片等加掛上GitHub資料庫</p><figure id="bae97322-63b8-4a01-981e-d2e056e9783e" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/Add_file.jpg"><img style="width:454px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/Add_file.jpg"/></a></figure><p id="0f2a73de-ea8a-4e8f-84d9-c63b84451b76" class="">              同上&lt;l&gt;    ** 新版：在&lt;settings&gt;左欄&lt;<strong><strong>Code and automation</strong></strong>&gt;下， 按&lt;pages&gt; **</p><p id="23cc0dda-3e2e-4189-af92-fc5d9083cdd1" class="">                     &lt;o&gt;   連結該網址 https://kmhgit.github.io/kmh-page/</p><p id="0747774d-db63-428c-8dbb-76fb9c729e5a" class="">                               再將自己的網頁名bemyself.html複製貼在”/”後面，成為</p><p id="d2715e05-c91c-4819-9384-ad19534b619b" class="">                                <a href="https://kmhgit.github.io/newpage/bemyself.html">https://kmhgit.github.io/kmh-page/bemyself.html</a></p><p id="f9e41ee9-a8ad-4f74-a9d1-f0e0b18cdb27" class="">                               網頁就更新完成！(需等候些時)</p><p id="d72c737d-6888-4e84-a57d-af4b720469c7" class="">           b 同上，在&lt;&gt;code的&lt;Add file&gt;後方的&lt;Code&gt;，可以點選已建置repository</p><p id="944ab753-2a63-4a89-8a3d-79f5c30bbf7f" class="">              資料庫中的HTML（例如bemyself.html），查看該超文件的內容</p><figure id="79030442-b99b-4880-9270-17f4fe872f69" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/code.jpg"><img style="width:451px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/code.jpg"/></a></figure><p id="f235cc19-4b5b-46b8-9cf8-d4ba5c456ca2" class="">
+</p><p id="0a057c50-40a9-486d-a782-270811ab14ab" class="">（三）在GitHub畫面的&lt;&gt;code同列尾端按&lt;Settings&gt;， 畫面的最下方</p><p id="f0e8f0a9-d89a-4353-aa72-56df3df355a3" class="">          「Danger Zone」有「Delete this repository」的選項，可以把</p><p id="da4d5bcb-3787-49c5-8060-9c3d6631a397" class="">           該Project 的repository資料庫刪除</p><figure id="a889471a-0afc-43d7-99ba-1c5bf07e52ac" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/delete-repository.jpg"><img style="width:487px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/delete-repository.jpg"/></a></figure><p id="e27fb2f6-3b38-43a0-a3c2-ec46d32d934c" class="">
+</p><p id="555659b4-3383-4789-a5f9-4412c5232c7c" class="">（四）HTML中&lt;img src=”圖片名稱.jpg” width=……&gt;</p><p id="2123a890-2bc4-4b1f-9733-f69bd87d0a18" class="">          ”圖片名稱.jpg”最好是小寫英文（即使副檔名jpg也是）！若使用中文跟英文大寫，可能會導致圖片無法顯示的現象。</p><p id="f049edf8-245c-45aa-85b1-7a8945d79ce4" class="">         【gugu-home.html就出現”過港牌坊. jpg”、 ”p01. JPG”等圖片無法顯示的現象，就是因為”過港牌坊” 、 ”JPG”是中文跟英文大寫，導致圖片無法顯示！將它改為”p01. jpg”…後，就能順利顯示】</p><p id="a7ac99dc-8dc8-4b53-9813-e963a91f324f" class="">           ** 參考:1. <a href="http://www.dfps.tp.edu.tw/main/readfile/nopic.htm">http://www.dfps.tp.edu.tw/main/readfile/nopic.htm</a> **</p><p id="9c9dc558-3c7a-4b3f-b14c-c656cbc74791" class="">                       2. <a href="http://www.webpage.idv.tw/maillist/maillist3/new/10/10.htm">http://www.webpage.idv.tw/maillist/maillist3/new/10/10.htm</a> </p><p id="d5ebd41a-a41c-4686-b2e2-c4d84e0ec733" class="">                           (網頁設計中 HTML 常犯的幾個錯誤)</p><p id="50f4ec4a-baf7-450a-9834-9437f0e74c49" class="">
+</p><p id="57991256-55c4-4d1d-aeb1-34e3710ddf48" class="">（五）檔案夾中含有隱藏的項目時，如何顯示？</p><p id="67770aba-eff1-44cf-9ddc-5b7b7af3ca9a" class="">           1.開啟該檔案夾，如:C:\Users\MyComputer\Desktop\我的專屬網頁...\kmh-page、gugu-page</p><p id="03ced1ec-c42e-417c-bedf-47d3a4a92d38" class="">           2.找到左上角【檢視】&lt;Enter&gt;</p><p id="66766938-8360-4203-9298-c60a25317f0f" class="">           3.找到上欄中間【隱藏的項目】，&lt;Enter&gt;打勾，即可看到「.git」顯示</p><figure id="87f1545f-1bd8-4b8b-9f13-9b2a6d813d79" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/%E9%9A%B1%E8%97%8Fgit.jpg"><img style="width:437px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-1%20edaea09809b24db382a018b5f2a20b30/%E9%9A%B1%E8%97%8Fgit.jpg"/></a></figure><hr id="70fdc09c-fa7f-4cb8-a394-dc4331e8aa3e"/><p id="c8f920fa-8a00-4f0f-a4de-0279900e9bcc" class="">
+</p><h2 id="03e1f668-55d4-4585-85ea-59715be97623" class=""> 二、Git免費電子書&amp;雜記</h2><p id="fba5e18b-12d0-4657-aa25-018d3246599c" class="">
+</p><p id="3cb1a55b-4ecb-4045-9435-a69cc99409a1" class="">（ㄧ）  ** 為你自己學 Git--免費電子書 **</p><p id="95dd8129-e676-4230-ba84-01ee52bd058f" class="">            <a href="https://gitbook.tw/">https://gitbook.tw/</a></p><p id="b7c09b9a-ad13-4035-8af5-aa1499e46414" class="">            <a href="https://gitbook.tw/chapters/introduction/about-this-book.html">https://gitbook.tw/chapters/introduction/about-this-book.html</a></p><p id="e20b5091-a6a9-4531-900b-11c39028628d" class="">
+</p><p id="f6a1d866-6667-475b-b59a-3c0d31606f4e" class="">（二）分辨 Git 和 GitHub的差異 *</p><p id="82a75bec-8de3-4098-aca8-e91ab10cde08" class="">           Git 是一款版本控制軟體，而 GitHub 是一個商業網站</p><p id="31c25842-7589-4b98-99a9-0c8509963738" class="">           GitHub 的本體是一個 Git 伺服器，但這個網站上的應用程式讓大家可以透過 Web 介面來操作一些原本需要複雜的 Git 指令才能做到的事</p><p id="73f6f432-abd2-4579-8e0f-f22dc75be0da" class="">           <a href="https://gitbook.tw/chapters/introduction/what-is-git.html">https://gitbook.tw/chapters/introduction/what-is-git.html</a></p><p id="1d795779-f2ea-459b-9c2a-d97d31cb5cea" class="">
+</p><p id="7cf6291b-fad9-4217-be0b-f4187253fa90" class="">（三）分散式系統 *</p><p id="39ea11e9-f91e-47ae-ab5f-edf6e2996ada" class="">           跟其它的版控系統（例如 CVS 或 SVN）相比，在<a href="https://gitbook.tw/chapters/introduction/what-is-git.html">上一章</a>有提到，Git 是一種分散式的版本控制系統，就算在深山裡或飛機上沒有網路可使用，也可正常的使用 Git，待有網路的時候再與其它人同步即可。Git 大部份的操作都是在自己電腦上就可完成，而且不管是遠端的伺服器或是自己的電腦，在同步之後大家都會有一份完整的檔案及歷史紀錄。</p><p id="a04ec3ea-2eb3-4ecf-8271-257e7b2cf4b3" class="">           <a href="https://gitbook.tw/chapters/introduction/difference-between-other-system.html">https://gitbook.tw/chapters/introduction/difference-between-other-system.html</a></p><p id="8a5b9586-1330-4f16-8ca8-d5688505861b" class="">
+</p><p id="3ce0538e-db7c-4ee0-b813-18dcc096f741" class="">（四）如何調整照片大小、加註文字？</p><p id="beff410f-602b-4b7d-b94a-4ab0369ef491" class="">          (A) 調整照片大小</p><p id="0ee27e0b-55c1-4b7c-99f4-258aac9ddd89" class="">                1.滑鼠移至該照片，按左鍵，顯示藍色背景（表示要對它採取畫面上欄【複製、…開啟、編輯】等動作）</p><p id="3b768f28-8f47-4773-a2c9-7ecb457de13c" class="">                   ** 另：滑鼠移至該照片，按右鍵，跳出中間框欄，效果相同 **</p><p id="c069cf06-fe70-4370-bc19-256a17845121" class="">                2.選【編輯】，該照片出現在「小畫家」背框中</p><p id="955af636-1893-4ae3-87cb-043033c415ec" class="">                3.選【調整大小】，出現【百分比、像素】等選項，依自己需要調整</p><p id="cfa29d60-67cb-4a07-bb09-42aa730d40be" class="">          (B) 加註文字</p><p id="077ce065-47bb-4f4b-b08f-93473c88c8b7" class="">                1.~2.同上</p><p id="a32b5d26-018b-4bb7-8b89-6e3fb12e12c6" class="">                3.選【A】，再挑【色彩】</p><p id="54f64644-c902-476a-8b13-9548b721e9a6" class="">                4.滑鼠移至照片欲加註文字之處，按左鍵，顯示虛線橫框</p><p id="d1916ab3-1f28-4452-83af-368d9b8172ab" class="">                5.依自己需要挑選字型、大小、橫框長度</p><p id="16df7400-e075-41c6-919b-d87234a3c3d0" class="">
+</p><p id="70855996-2976-4c25-b545-f6fcd2dc1c1e" class="">（五）在任何軟體英文頁面下，只要按【滑鼠右鍵】，即可跳出選按「翻譯成中文繁體」，方便操作使用</p><p id="dc2e3378-1418-4a40-a408-ae18a98cf609" class="">
+</p><p id="6752aa71-a2f4-4108-beda-8e813e97d402" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
