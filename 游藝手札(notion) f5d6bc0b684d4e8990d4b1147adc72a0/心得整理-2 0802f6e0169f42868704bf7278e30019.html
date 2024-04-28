@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>心得整理-2</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0802f6e0-169f-4286-8704-bf7278e30019" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📏</span></div><h1 class="page-title">心得整理-2</h1><p class="page-description"></p></header><div class="page-body"><hr id="e857e757-bc2d-4331-a383-7e477999d41e"/><h2 id="335871ea-9e7e-4d29-90d0-923ce8ead0fe" class="">一、如何將notion筆記檔匯出(export)成HTML/Markdown/PDF</h2><p id="500bea74-7a57-4573-a342-9ca9835d81ee" class="">
+</p><p id="c6902983-b2fc-4760-b209-3cc6814a4650" class="">（ㄧ）開啟notion筆記檔頁面，如【游藝手札(notion)】</p><figure id="e788cc27-b50c-4837-b474-cb67d21e8623" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E9%96%8B%E5%95%9Fnotion.png"><img style="width:547px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E9%96%8B%E5%95%9Fnotion.png"/></a></figure><p id="ad01027b-c72e-45e3-b0ff-fb86e83203d3" class="">
+</p><p id="fe65f0ad-94c9-4d7d-809f-7060b8d8a871" class="">（二）1 按右上角「…」選項 (黃色星號右側)，出現畫面</p><figure id="89d746ed-c6b7-477b-9bc3-0098d94fd6f6" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/Export%E9%81%B8%E5%96%AE.png"><img style="width:464px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/Export%E9%81%B8%E5%96%AE.png"/></a></figure><p id="ae323b82-8d60-43ae-b3d3-f8296b29d0c9" class="">
+</p><p id="aeb2b0c4-4416-4687-82d0-3d00520f591f" class="">           2 按選單底下&lt;Export&gt; ，出現畫面</p><figure id="d4af1505-177a-4c0f-8a87-ca023a0ab55b" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/notion%E5%8C%AF%E5%87%BAhtml.png"><img style="width:412px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/notion%E5%8C%AF%E5%87%BAhtml.png"/></a></figure><p id="75f86392-8b4e-4067-8f48-b02c2cec9892" class="">
+</p><p id="e9209cc1-400d-4ae6-a9dc-7d88535eba79" class="">（三）在&lt;Export format&gt;中挑選要匯出—HTML/Markdown/PDF…</p><p id="4605159b-831f-4358-bb7f-0cacdf77aea4" class="">（四）如果有子頁面(孫頁面...)檔案夾、內容照片檔案夾，要記得打開&lt;Include subpages&gt;，再按&lt;Export&gt;</p><p id="aaa545d6-fa5a-4012-bfd2-e2d3ee04ce16" class="">（五）主頁面、子頁面(孫頁面...)檔案夾...逐一匯出後，壓縮檔zip 出現在頁面左下角 (桌面也有)</p><p id="46b86964-d548-4d45-8c89-b28f7c936ad9" class="">
+</p><figure id="a8553b59-8149-4caf-88ba-9ea2955c381d" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E5%8C%AF%E5%87%BA%E5%A3%93%E7%B8%AE%E6%AA%94.png"><img style="width:599px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E5%8C%AF%E5%87%BA%E5%A3%93%E7%B8%AE%E6%AA%94.png"/></a></figure><p id="ee2bb96a-8029-4c73-9a10-d2586cc91e2f" class="">
+</p><p id="a0525029-5c05-493f-90d9-7c28d0bca1dc" class="">（六）1. 在桌面逐一找到各個壓縮檔，按滑鼠左鍵，壓縮檔反白後，再按滑鼠右鍵，畫面如下</p><figure id="1f4d35b1-5fa7-4193-a0b8-942dae007ec8" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E9%96%8B%E5%95%9F%E5%A3%93%E7%B8%AE%E6%AA%94.png"><img style="width:561px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E9%96%8B%E5%95%9F%E5%A3%93%E7%B8%AE%E6%AA%94.png"/></a></figure><p id="6c241c30-0ed1-4494-b64c-7eb134d42568" class="">
+</p><p id="ce39f53e-7768-4024-9fda-db0805e869f8" class="">            2. 選用7-Zip—&gt;逐一開啟解壓縮，產生如下畫面，成功將匯出的HTML/Markdown/PDF解壓縮檔放在如下檔案夾</p><figure id="928da5b7-c09e-4cce-83ee-4bd3d97a3321" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E9%80%90%E4%B8%80%E8%A7%A3%E5%A3%93%E7%B8%AE%E6%AA%94.png"><img style="width:664px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E9%80%90%E4%B8%80%E8%A7%A3%E5%A3%93%E7%B8%AE%E6%AA%94.png"/></a></figure><p id="4e6a3f28-9eef-48ff-891b-fb0c72dc6a95" class="">                </p><p id="a64dc75c-7fe3-4c88-ab3f-2c56aa6df870" class="">             3. 將上述所有解壓縮後的檔案夾中所有檔案(內含有 .git <strong><a href="http://readme.md/">README.md</a></strong><strong>  等隱藏檔</strong>)複製到自行</p><p id="8c7e089a-c316-43d4-9ee5-0665e569549d" class="">                 設定的專案檔案夾 (如：C:\Users\My Computer\Desktop\我的專屬網站</p><p id="6156e8a0-7c3c-46a2-bdd0-b14faa15dc94" class="">                 20220224\notion20220224)中</p><p id="19dbf521-9716-4e85-843b-8621d20f83bf" class="">
+</p><figure id="d808f9c3-95bc-43ab-90cd-d49dc07d2471" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E8%A4%87%E8%A3%BD%E6%89%80%E6%9C%89%E8%A7%A3%E5%A3%93%E7%B8%AE%E6%AA%94.png"><img style="width:690px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E8%A4%87%E8%A3%BD%E6%89%80%E6%9C%89%E8%A7%A3%E5%A3%93%E7%B8%AE%E6%AA%94.png"/></a></figure><p id="2abe2c4b-a587-41ca-ab2d-4f6fd97241a2" class="">
+</p><p id="23806271-f1fd-4f58-ad03-90cd3a87a6e6" class="">（七）a. 使用vs-code即可開啟HTML檔，進行編輯／修改</p><figure id="4ea4feef-7a7d-4ec6-81bf-8aaeac4171d4" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/vscode%E9%A0%81%E9%9D%A2.png"><img style="width:547px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/vscode%E9%A0%81%E9%9D%A2.png"/></a></figure><p id="80ee588e-69c3-4bb4-a80b-7545b19cc349" class="">
+</p><p id="032eb6f0-06ec-4cd6-ba4f-656fb497c9bd" class="">          b . 使用Dillinger-Online Markdown，可匯入(import)Markdown的md檔，線上進行編輯／修改，並能直接看到右側網頁頁面呈現</p><figure id="93ca2a00-50bc-4fea-a2a6-edffc2039749" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/Dillinger%E9%A0%81%E9%9D%A2.png"><img style="width:547px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/Dillinger%E9%A0%81%E9%9D%A2.png"/></a></figure><p id="d68a1ff2-4ffe-488e-a9dd-3abd2e3bb62c" class="">
+</p><p id="38c574bb-77b7-447b-86ed-1f59eab2a455" class="">（八）1. 若要將該（原始由notion筆記軟體產生後匯出的）HTML檔(檔案夾)發布到網頁，參考: (心得整理1) --利用GitHub &amp; Terminal推上網的工具與過程</p><p id="eaceaf34-11c6-499d-94d2-4af83a1d65dd" class="">           2. 上述1.--利用GitHub &amp; Terminal推上網的工具與過程中，在&lt;settings&gt;開啟網頁前，需在&lt;code&gt;—&gt;&lt;Add file&gt;—&gt;&lt;Upload files&gt;下，將所有的檔案Upload </p><p id="0ca7f92d-f06f-4173-9f83-29aed234014e" class="">           ** 附註：上述檔案夾中內含有子頁面(孫頁面...)檔案夾、內容照片檔案夾和 .git <strong><a href="http://readme.md/">README.md</a></strong><strong>  等</strong>，需一併發布到GitHub伺服器，網頁才能完整呈現！</p><p id="0cc6e806-d0e4-4065-af78-8b0aafa1930f" class="">
+</p><h2 id="0a4c1f50-dc8d-4c94-8600-a72f7f622acb" class="">二、notion筆記頁面和html(利用github上傳發布的)網頁之比較</h2><p id="5796b28d-02c2-45dd-9665-27d67d3f70d4" class="">
+</p><p id="cfa3e7a2-ecde-4f86-b50b-17690e6a5ada" class="">（ㄧ）在任何軟體英文頁面下，只要按【滑鼠右鍵】，即可跳出選按「翻譯成中文繁體」，方便操作使用</p><p id="88769f67-b51a-420b-bc9e-9a31f7200d25" class="">（二）在notion頁面下，只要按【&lt;ctrl&gt;+&lt;shift&gt;+L】，畫面就可反黑，降低光源傷;</p><p id="969e80b8-398b-486d-8407-fa50f5f55901" class="">           html(利用github上傳發布的)網頁則無此功能</p><p id="98da4d59-2273-4db7-bcb8-f6ad1e5de3e2" class="">（三）notion筆記頁面和html網頁之比較:</p><ol type="1" id="9c5cf8ba-a057-4062-ba02-9f58fd20c3fe" class="numbered-list" start="1"><li>notion筆記頁面是私人筆記，供個人線上瀏覽、修改、編輯用(除非授權他人可以瀏覽、評論或編輯)；但無法預覽該頁面的「html原始碼」，除非將該notion筆記頁面透過匯出〈export〉成html(另見下列2.和5.)</li></ol><ol type="1" id="58244f60-7b0c-47f3-9bf2-64f6c47ff070" class="numbered-list" start="2"><li>notion上傳檔案限制5MB(例如使用SONY相機拍攝的「大雪山林道」原始照片，每幅超過5MB，就會警示而無法上傳！同一幅照片，儲存至line相簿後再下載，容量大幅縮減，就能順利上傳notion)。 (html似乎也有上傳檔案容量的限制!?)</li></ol><ol type="1" id="8d32fc4f-acd2-492d-b141-722def60b39c" class="numbered-list" start="3"><li>用瀏覽器(如chrome)開啟html網頁時，看到的是頁面；若想預覽html原始碼，按滑鼠右鍵、&lt;檢視網頁原始碼&gt;即可(詳見下列5.)；若要編輯，需利用vs-code開啟html原始檔案，進行編輯後，再利用github發布到伺服器(詳閱「心得整理-1」)，供自己和開放他人瀏覽，步驟如下:</li></ol><p id="ab3a1990-a9a7-4f31-8d81-0993dc5f7f1d" class="">      a 開啟該專案(project/<strong><strong>Repositories) </strong></strong>—&gt;在&lt;code&gt;列 / 按〈Add file〉—&gt;按〈Upload files〉</p><p id="bd1a52cb-16e5-40d5-9131-f016a89df077" class="">             —&gt;將修改後的html上傳 —&gt;記得按〈commit changes〉</p><p id="7af4b741-d51f-41d0-928f-6d5db43b3881" class="">      b 接著再&lt;<strong>Settings&gt;—&gt;找到&lt;GitHub Pages&gt;—&gt;按&lt;</strong><a href="https://github.com/kmhgit/notion20220218/settings/pages">Check it out here!</a><strong>&gt;</strong></p><p id="ce5a44c8-2f2d-44ae-9eb7-8bc31b592220" class="">      c 接著進入<strong>&lt;GitHub Pages&gt;畫面—</strong>&gt;</p><p id="22358035-f99c-4355-9070-2e8b8f973a74" class="">             看到&lt;our site is published at <a href="https://kmhgit.github.io/notion20220218/">https://kmhgit.github.io/notion20220224/</a>&gt;</p><p id="b8fc9adb-a904-4528-aae9-7385fc7c4c73" class="">      d 按&lt;<a href="https://kmhgit.github.io/notion20220218/">https://kmhgit.github.io/notion20220224/</a>&gt;進入伺服器該專案，在最後一個”/”後面</p><p id="0c4e2c41-cd50-4387-b310-1a87f72a0dbd" class="">         貼上修改後的html檔名(如:游藝手札(notion)html，再按&lt;enter&gt;,即可開啟該網頁</p><ol type="1" id="42e8cf9e-b4fb-4ff9-9de7-3b4750c74cbb" class="numbered-list" start="3"><li>在電腦版編輯完成的notion筆記，手機版呈現的頁面和電腦版頁面有差異；而且因為是私人筆記，除非分享邀請(利用email...)他人,否則他人無法開啟瀏覽(即使是將notion筆記匯出成html，再利用github上傳發布，亦受此規範！)</li></ol><ol type="1" id="7ffa4533-c756-4820-901b-de87173a3405" class="numbered-list" start="4"><li>使用vs-code編寫，再利用github上傳發布(publish)的html網頁，則可供任何人瀏覽(也能按滑鼠右鍵—&gt;〈檢視網頁原始碼〉)</li></ol><ol type="1" id="be27691c-9e63-4555-b3ab-c8baed4dbd2a" class="numbered-list" start="5"><li>承上，瀏覽html(利用github上傳發布的)網頁時，可檢視該網頁原始碼，步驟:</li></ol><p id="8e161557-5571-46e4-9c1b-42792ec76217" class="">           a. 按滑鼠右鍵、出現如下畫面</p><figure id="5b5094b9-6635-4750-9682-9f75f0b69d36" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E6%AA%A2%E8%A6%96%E7%B6%B2%E9%A0%81%E5%8E%9F%E5%A7%8B%E7%A2%BC.png"><img style="width:441px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E6%AA%A2%E8%A6%96%E7%B6%B2%E9%A0%81%E5%8E%9F%E5%A7%8B%E7%A2%BC.png"/></a></figure><p id="6c19b797-f98c-4c07-bf11-916f2390f01c" class="">
+</p><p id="49487270-9d50-4f36-84ce-70856f059f64" class="">              b. 選按〈檢視網頁原始碼〉，出現如下畫面</p><figure id="0f518afb-2693-4172-9c97-0f54135cdb77" class="image"><a href="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E7%B6%B2%E9%A0%81%E5%8E%9F%E5%A7%8B%E7%A2%BC.png"><img style="width:435px" src="%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-2%200802f6e0169f42868704bf7278e30019/%E7%B6%B2%E9%A0%81%E5%8E%9F%E5%A7%8B%E7%A2%BC.png"/></a></figure><p id="182ac890-b681-4275-ab9b-44282c606852" class="">                c. 即可利用vs-code開啟該html檔，再進行編輯</p><p id="3bfd904a-f298-4714-af45-e40a87ef7a13" class="">
+</p><p id="aafcaf19-9615-4c77-8ef6-29b98545cd04" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
