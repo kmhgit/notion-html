@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>口袋音樂</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="00823b98-6f56-44ec-b802-43d0a6cb6e5e" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_11.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💌</span></div><h1 class="page-title">口袋音樂</h1><p class="page-description"></p></header><div class="page-body"><hr id="ce0ce3d9-daaa-452f-a7b6-b0b6c49c20ab"/><div id="c5eaaa6d-8113-4301-98bb-caadb7ba3e95" class="column-list"><div id="7baeedbc-1820-4538-94fe-fd202b33a106" style="width:50%" class="column"><ul id="149f8eab-e13e-492c-bb64-5b1c3c103b6f" class="toggle"><li><details open=""><summary><strong><strong>Ennio Morricone - 配樂</strong></strong></summary><ul id="9960934c-3385-45be-8cdf-a1e1bfa04bbf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=WfzBx8SSQOU&amp;list=PLB837B03F105DD4FD&amp;index=16">1900-Playing Love-1</a></li></ul><ul id="b6236aef-3e8e-4932-96b3-538c905009d7" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=aSoe7-sAmXI&amp;list=PLB837B03F105DD4FD&amp;index=7">1900-Playing Love-2</a></li></ul><ul id="cf5b88f8-2e6c-410d-8abd-ea9d1f3ca56f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=s7w-IeNR9ko">教會-The Mission</a></li></ul><ul id="4bbb9f3c-07e1-4381-ab55-148ed358e5dd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=WSkyoyyvnAY&amp;list=RDWSkyoyyvnAY&amp;start_radio=1&amp;rv=WSkyoyyvnAY&amp;t=24">Cinema Paradiso-1</a></li></ul><ul id="f99cd462-d12d-481a-8401-0eddcbcdf3bf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=57rIxnClafg">Cinema Paradiso-2</a></li></ul></details></li></ul><ul id="faaec1dc-9daa-4183-9205-7969b194966e" class="toggle"><li><details open=""><summary><strong><strong>Nicolas de Angelis-吉他</strong></strong></summary><ul id="81668823-ab9b-4f9b-b383-fd40040f4125" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=aHvFv2_gfs4&amp;list=OLAK5uy_ll1sQcdako-eHq3wG5FXfGOP6ZEAZqmEw&amp;index=19">Solamente el Amor(Only love)</a></li></ul><ul id="dd6b9050-a139-4c11-9e20-d258ae00b411" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=U_hAmfNrG7w">Quelques notes pour Anna</a></li></ul><ul id="e298a7b6-1efa-4eb8-9ccb-bbbd71fa2497" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=O3A97qwfAeQ">Splendid Melody</a></li></ul><ul id="41ccca12-da04-4933-80c6-4a9388c37b3f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=FNAO1CMSfnQ&amp;list=OLAK5uy_ll1sQcdako-eHq3wG5FXfGOP6ZEAZqmEw&amp;index=20">Amour Fou, Amour Loup</a></li></ul><ul id="3d70bb7e-f7d8-4dae-ae2f-70498ca74e11" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=is8Fy2P8MHQ&amp;list=OLAK5uy_ll1sQcdako-eHq3wG5FXfGOP6ZEAZqmEw&amp;index=8">Près De Coeur(Near Heart)</a></li></ul></details></li></ul><ul id="c2628657-4ebc-42ce-aba1-76bf702fae69" class="toggle"><li><details open=""><summary>電影<strong>配樂＆其他</strong></summary><ul id="d3cedc5b-f7a8-4482-86cf-48ce67dc4acd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=eEQiG9sZg7c">O mio babbino caro- Puccini</a></li></ul><ul id="2af0d0e6-8df1-4608-9d8f-e6e51fd4a158" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=fNj6YGaL9oo">The Postman-Luis Bacalov</a></li></ul></details></li></ul><p id="296afabd-cf4a-4a82-860d-2a9cf7d78add" class="">
+</p></div><div id="007d86db-f190-401f-8516-3fee4aabc11a" style="width:49.999999999999986%" class="column"><ul id="f8ea5ea5-4e51-4735-96b8-218ec4920109" class="toggle"><li><details open=""><summary><strong><strong>心情點播 - 歌曲</strong></strong></summary><ul id="afb0189c-1b0a-449c-9141-1a51bf3689c4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=4RojlDwD07I">You Raise me Up</a></li></ul><ul id="d40469ca-e62c-480b-9bf5-0130f84240b8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=BbSE-W5Q82g">What a Wonderful World</a></li></ul><ul id="cfb6076c-0fc5-47d3-8b5a-2ce0ca6ba449" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=iUmTrRV1jyw">JR東海X&#x27;mas</a></li></ul><ul id="f614aab9-355c-4767-9d85-9647e49e8ee5" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=3Xk51mY9vUw">できること</a></li></ul><ul id="fcdb5640-e22f-470a-95e1-5259adb6d23a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=EsnLGKtSfG4">嘘のつき方</a></li></ul><ul id="2aa7badd-365f-45c1-8d9f-8855122479d0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=-bHNqkbU-tI">再會啦心愛的無緣的人</a></li></ul><ul id="877938f8-7a2b-4f09-a6e8-e9a4b37bab75" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=FCJQWq64Rq8">徐北荷-晚風</a></li></ul><ul id="41b676cd-942d-4a32-9f13-2a040e35998c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=iMb1QG7z6eQ">馬宜中-梅雨季節</a></li></ul><ul id="a839b661-cf9e-446b-acfc-068f89dd0c30" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=yjB1imwBIZ8">王夢麟-離開你走近你</a></li></ul><ul id="fa5d38c6-59c3-42ab-8ed6-706d389c22b1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=Gt_GTOf1wSk">王若琳-&quot;茶金&quot;插曲</a></li></ul><ul id="f7581657-fb68-4e1e-8e8a-5df7329a4297" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.jpmarumaru.com/tw/JPSongPlay-3439.html">花笠道中 - 美空ひばり</a></li></ul><ul id="18b3029d-b82f-455f-9868-f73fb0c2dd29" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=OQnmkbS7QJg">若い広場 - 桑田佳祐</a></li></ul><ul id="789f341c-b072-456f-9931-aba43982409b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=8lcWqHWar4o">沉默是金-張國榮 許冠傑</a></li></ul><ul id="ea9703d7-2929-434c-bf89-5443e2bce7a4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=f-Neutoz40g&amp;list=RDGMEMhCgTQvcskbGUxqI4Sn2QYw&amp;start_radio=1&amp;rv=OQnmkbS7QJg">送別-藥師寺寛邦 kissaquo</a></li></ul><ul id="640f65ea-8b2f-4344-ac3e-72d15f57ca15" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.jpmarumaru.com/tw/JPSongPlay-1774.html">夜來香(日)-鄧麗君</a>(歌詞-單句播放)</li></ul><ul id="6ac3da16-ba22-45c0-88ff-db466ea26f98" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=Bek1pBwOals&amp;list=RDBek1pBwOals&amp;index=3">Shanagolden · Liz Madden</a></li></ul><ul id="7d91518e-8b77-4c5f-b96a-16ae321e6f35" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.jpmarumaru.com/tw/JPSongPlay-213.html">涙そうそう - 夏川りみ</a>(歌詞-單句播放)</li></ul><ul id="5bca4783-8f31-4334-ad9f-5bbc5f60e027" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=Leiebo4V2cE">津軽海峡冬景色- 石川さゆり</a></li></ul><ul id="470d4a94-aab2-4b8c-965d-03ba3838c6e1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=cSv5clDer-U&amp;list=RDDL0sE3yY6LY&amp;index=4">木吉他-雨戀</a></li></ul></details></li></ul></div></div><p id="faed7cd3-9ef9-46de-9b7b-bc3b448d0f82" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
