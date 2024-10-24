@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>教學網&amp;朗讀…</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b0ffbf6c-225f-480f-8041-00d8c5dc77a9" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/woodcuts_16.jpg" style="object-position:center 100%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🪁</span></div><h1 class="page-title">教學網&amp;朗讀…</h1><p class="page-description"></p></header><div class="page-body"><p id="e8dd6208-4156-4ef3-a312-7b2b32e034f9" class="">
+</p><hr id="602aad19-4ad2-45f9-b20e-a3c67de40353"/><div id="fd65ce53-55bf-4b3e-99eb-8848349c1bcb" class="column-list"><div id="8068c79d-e0d9-425f-b632-c3dd4e928167" style="width:33.33333333333333%" class="column"><ul id="7dc40265-70e0-4ff6-a917-d7fbe2cbd058" class="toggle"><li><details open=""><summary>音速日語</summary><ul id="8fbd5a32-c402-42f2-a376-de53d754b8e8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://jp.sonic-learning.com/category/%e2%85%a2%e3%80%80%e9%9f%b3%e9%80%9f%e6%97%a5%e8%aa%9e%e6%96%87%e6%b3%95%e6%95%99%e6%9d%90/%e2%85%b0%e3%80%80%e5%9f%ba%e7%a4%8e%e6%96%87%e6%b3%95-n5-n4/">基礎文法 N5-N4</a></li></ul><ul id="a619b972-0bb8-4b3e-ba9a-d06d750c3d3d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://jp.sonic-learning.com/category/%e2%85%a2%e3%80%80%e9%9f%b3%e9%80%9f%e6%97%a5%e8%aa%9e%e6%96%87%e6%b3%95%e6%95%99%e6%9d%90/%e2%85%b1%e3%80%80%e9%80%b2%e9%9a%8e%e6%96%87%e6%b3%95-n3-n2/">進階文法 N3-N2</a></li></ul><ul id="7b402cc9-8dfd-44c2-a892-e1bd11e8cb64" class="bulleted-list"><li style="list-style-type:disc"><a href="https://jp.sonic-learning.com/category/%e2%85%a2%e3%80%80%e9%9f%b3%e9%80%9f%e6%97%a5%e8%aa%9e%e6%96%87%e6%b3%95%e6%95%99%e6%9d%90/iii%e3%80%80%e6%95%ac%e8%aa%9e%e6%95%99%e6%9d%90-n4-n3/">敬語教材</a></li></ul><ul id="4e0f7368-97fd-4d73-8097-afcb377eba95" class="bulleted-list"><li style="list-style-type:disc"><a href="https://jp.sonic-learning.com/category/%e2%85%a2%e3%80%80%e9%9f%b3%e9%80%9f%e6%97%a5%e8%aa%9e%e6%96%87%e6%b3%95%e6%95%99%e6%9d%90/iv%e3%80%80%e5%8f%a3%e8%aa%9e%e6%96%87%e6%b3%95-n3-n2/">口語文法</a></li></ul></details></li></ul></div><div id="e45497bb-0dd1-409b-83d6-1ac6f6cb640b" style="width:33.33333333333333%" class="column"><ul id="69a6a42c-d935-4bcf-8436-2d9de057ad90" class="toggle"><li><details open=""><summary><strong><a href="https://yasuwangblog.com/ja/">谷子塾-日本語</a></strong></summary><ul id="0ea218cd-36b3-4afe-86ec-c55dbc0a2f9d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://yasuwangblog.com/osuru/"><strong><strong>謙譲お／ご～する</strong></strong></a></li></ul><ul id="25436327-b320-4448-bf67-f79d150659b8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://yasuwangblog.com/ninaru/"><strong><strong>尊敬お／ご～になる</strong></strong></a></li></ul><ul id="23475a9a-b630-4d5a-a8f7-691107f7c087" class="bulleted-list"><li style="list-style-type:disc"><a href="https://yasuwangblog.com/teoru/"><strong><strong>謙譲語ておる</strong></strong></a></li></ul></details></li></ul></div><div id="3da26acc-16a5-4607-9e6b-9f2158d913f8" style="width:33.33333333333334%" class="column"><ul id="4c914bb7-e76f-45f8-a862-4cdec193ed8d" class="toggle"><li><details open=""><summary>Haru&#x27;s Japanese Cafe</summary><ul id="621be6b7-9f7d-477b-9c67-c63a2b6ab62b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=BVuGNqG7b3Q&amp;list=PL2MpP9BgnjX7-E6xLrJie_XhI_xshp6oJ"><strong><strong>&quot;還沒吃&quot;的日文</strong></strong></a></li></ul><ul id="864f7829-3ea0-4c85-9752-7d3a0c0169e1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=hs8anTFJHSM">什麼叫“連濁”</a></li></ul><ul id="ba02e038-58fd-48c6-9a90-aeb9a77dea01" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=cIpbiSAH598">嫌い跟嫌的差別</a></li></ul><ul id="4cc73fbd-b20d-4398-91e0-3ee1934bed11" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=9p53xpsl14U">ありがとう正確用法</a></li></ul></details></li></ul></div></div><div id="c375e75d-592b-40e6-897e-36cfb6aa7989" class="column-list"><div id="cd9da9ec-7066-46b0-9a2e-bf0fcb485f39" style="width:33.33333333333333%" class="column"><ul id="310e4f85-f35c-41a4-9d8f-d0e6dbdca465" class="toggle"><li><details open=""><summary><strong><a href="https://www.sigure.tw/">時雨の町</a></strong></summary><ul id="d76a662c-1cd2-4e44-adc5-fd62d98cfc3f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.sigure.tw/learn-japanese/grammar/n4/15.php">（ら）れる-被動.可能.自發.尊敬</a></li></ul><ul id="1de43546-941b-4a2f-bc6e-fb6296562ffb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.sigure.tw/learn-japanese/grammar/n4/14.php">（さ）せる-使役形</a></li></ul><ul id="0067f0cf-52f1-4329-b8ca-bc05291167a8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.sigure.tw/learn-japanese/grammar/n4/01.php">にする-決定</a></li></ul><ul id="12818965-15da-441a-8ef5-354ccd75409b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.sigure.tw/learn-japanese/grammar/n4/05.php">になる-變化</a></li></ul></details></li></ul></div><div id="b3d39037-e83e-4226-9537-25420b626b3e" style="width:33.33333333333334%" class="column"><ul id="0f5681f4-56c6-4321-9c61-1081cf82f430" class="toggle"><li><details open=""><summary>Elsaの放送</summary><ul id="92c0bcc1-f28d-4bca-9284-4fcb987a54f1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=nPlyoNMnVvA">基礎文法42-上</a></li></ul><ul id="0ce319a7-dab0-4dae-973b-e189550c9ed3" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=22BQp7CCj10&amp;t=553s">基礎文法42-下</a></li></ul><ul id="07c660c0-278b-469e-86d4-0c74f7cc58ca" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=OAgA-Gmp0Z0">中級文法60個</a></li></ul><ul id="f31c4ac6-bac4-4fe6-8936-49cd5e096751" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=CVhwxkP5SsU">11句一學即用</a></li></ul></details></li></ul></div><div id="1adba66d-9583-44b1-a600-8c391765aa47" style="width:33.33333333333333%" class="column"><ul id="56633c2d-9645-47c3-85e2-9620fba10ce3" class="toggle"><li><details open=""><summary>楊家源日語</summary><ul id="3a34dfad-3ab7-434b-9cd1-5cf07a463aeb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=ai1eD8cJG54">基礎進階100句</a></li></ul><ul id="ecf43e99-d5bd-4aa2-8d1b-873975a0c35d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=LY6uGKx3DPM">基礎日語対話1</a></li></ul><ul id="1c846f8c-f25b-487f-bee9-9c4b94e6faaa" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=doklZ69AIUA">實用短句130句</a></li></ul><ul id="240103fb-7576-44b5-a0dd-282c098ed897" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=eT6Dn2-SjwM">格助詞原理</a></li></ul><p id="154ab95b-df98-4f9e-ad61-3cc380e11c31" class="">
+</p></details></li></ul></div></div><div id="522eb072-3f65-4e82-88ee-c1fb7cddc549" class="column-list"><div id="4c721bb6-e844-438f-96f0-609827b68f69" style="width:50%" class="column"><ul id="4edb1b42-07cb-4cb9-8ae1-951b5e585705" class="toggle"><li><details open=""><summary><strong><a href="https://www.cocoro.idv.tw/">知惠塾語文工作室</a></strong></summary><ul id="23e393a2-8de4-4bc1-824c-e9b44c244823" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.cocoro.idv.tw/archives">全站文章彙整</a></li></ul><p id="b0ad322e-62b1-44bc-826f-d0b90cd787ec" class="">
+</p></details></li></ul></div><div id="d90d6ef0-6d2f-4bd2-a0ae-713b0f026550" style="width:50.000000000000014%" class="column"><ul id="c6ccf757-7894-4e8e-932d-14b7911372a6" class="toggle"><li><details open=""><summary>答客問</summary><ul id="203e182d-9f72-4aba-b4f0-0a49ccc3fb20" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=hs8anTFJHSM">什麼叫“連濁”？有什麼例外？</a></li></ul><ul id="d6e685bd-3487-48c2-90a7-cb5ca0d13615" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=2ZaZ-0rvSoE">【日語重音】有規則但也有例外</a></li></ul><ul id="94249eb5-0768-4a0c-bdde-0e88b362fcc8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://jp.sonic-learning.com/2020/03/27/kitto/"><strong><strong>きっと、必ず、是非</strong></strong></a></li></ul></details></li></ul></div></div><div id="43a07bed-e984-43ff-871e-46c10c118d17" class="column-list"><div id="54119ea7-7d19-4dcb-8088-3d3dc434c1b9" style="width:50%" class="column"><ul id="201f55ee-b2c0-4083-a708-506e8e96bdd1" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.notion.so/KEN-ac0f28c8538d487da5904e355cc43c59?pvs=21">和Ken一起學日文</a></strong></li></ul></div><div id="dac7a3d4-732c-4863-89d3-eb4e64a26ccc" style="width:50%" class="column"><ul id="b753bbeb-80f0-451f-9702-b34ac823d103" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/watch?v=ciIq2dbDDcQ"><strong>MJ日語-磨耳朵</strong></a></li></ul></div></div><p id="e1a52bc8-3a27-46e1-ad12-ece2a2e3ed82" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
