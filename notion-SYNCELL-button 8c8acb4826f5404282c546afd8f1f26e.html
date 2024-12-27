@@ -1,0 +1,709 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>notion-SYNCELL-button</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8c8acb48-26f5-4042-82c5-46afd8f1f26e" class="page sans"><header><img class="page-cover-image" src="syncell-logo2x-new.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🏇🏼</span></div><h1 class="page-title">notion-SYNCELL-button</h1><p class="page-description"></p></header><div class="page-body"><p id="91ff7781-4fa5-4d2c-b373-0ea293f52e62" class="">
+</p><hr id="64c290c6-821d-4e73-a5d5-05f7de6937bb"/><p id="18542058-2197-465f-9e26-a26839565e01" class="">
+</p><figure id="dac35626-a2c1-446f-bc83-d9bfd97ad7a4" class="image"><a href="Untitled.png"><img style="width:1920px" src="Untitled.png"/></a></figure><hr id="b26f3f87-19c0-4228-817b-c043e4827805"/><div id="0a344263-9835-4019-a084-b07d8bc22f0d" class="column-list"><div id="85e21adf-eb22-472a-bc0f-441edb7bbcfb" style="width:20%" class="column"><ul id="186fc9aa-2130-45a7-a742-f1c1b42d735e" class="toggle"><li><details open=""><summary><a href="https://syncell.com/microscoop"><strong>Products</strong></a></summary><ul id="b45c6d04-1774-4131-a746-e1c844d40a27" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/microscoop">Microscoop™</a></li></ul><ul id="be3eb137-2678-4951-bd35-57953bea64aa" class="bulleted-list"><li style="list-style-type:disc">R<a href="https://syncell.com/products/reagents">eagents</a></li></ul><ul id="c76141a9-ddbb-422b-9a84-da57e6f25f9a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/products/tech">Technology</a></li></ul></details></li></ul></div><div id="306f4d8e-0c0f-4244-8e9f-02766feb744b" style="width:20%" class="column"><ul id="f526482b-0067-4b00-b5f8-234b95577d3b" class="toggle"><li><details open=""><summary><a href="https://syncell.com/application/workflow"><strong>Applications</strong></a></summary><ul id="6ada4729-06ee-4b55-bd3b-4417434f463d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/workflow">Workflow</a></li></ul><ul id="f3796ce8-7587-47a4-be91-0ac80e0cd05b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/oncology">Oncology</a></li></ul><ul id="322d428c-344b-49cd-a462-289e12eeb696" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/cancer">Cancer Immunotherapy</a></li></ul><ul id="0903c286-87fe-422d-9701-a47658d68684" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/neuroscience">Neuroscience</a></li></ul><ul id="4f3d5d89-8da6-46ce-bd77-1d3af5013dab" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/immunology">Inflammatory Disease</a></li></ul><ul id="00fde647-4abc-432b-b76a-b326f330d550" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/infectious_disease">Infectious Disease</a></li></ul><ul id="ac1f8040-d25f-4ac9-84f4-ffa2120d4b1d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/developmental">Developmental Biology</a></li></ul></details></li></ul></div><div id="904789df-b56a-42f3-b659-6b6fcbf63e75" style="width:20%" class="column"><ul id="62b69cff-b178-4e39-a976-759f44b84f56" class="toggle"><li><details open=""><summary><a href="https://syncell.com/news#"><strong>Resources</strong></a></summary><ul id="0373cd0d-cdaf-4e15-b79f-fce265be726e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/resources/references">References</a></li></ul><ul id="c5de88de-0ad9-4dc9-9531-9680ac7ca775" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/blog">Blogs</a></li></ul><ul id="b15b8564-9d2e-43ba-8357-550a539c0a3c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/resources/brochure">Brochure</a></li></ul><ul id="f2ea6a5e-c353-4713-8704-d613152f21b5" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/resources/videos">Videos</a></li></ul><ul id="62daf876-4b9b-4e41-9500-65d98d48f2f9" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/service/faq">FAQ</a></li></ul></details></li></ul></div><div id="81e32855-5a57-412f-b350-24b5bd2bacd2" style="width:20%" class="column"><ul id="ba656a68-ad27-452d-abdc-eca70b01f4ca" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/news"><strong>News &amp; Events</strong></a></li></ul></div><div id="c3f9630a-7390-4e3f-90a2-2a133d6ca937" style="width:20%" class="column"><ul id="8fdba5d9-00ed-4bb5-a047-58e405666fe0" class="toggle"><li><details open=""><summary><a href="https://syncell.com/company/about-us"><strong>Company</strong></a></summary><ul id="c4d0c280-31ed-4362-b114-c52079bc92bc" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/company/about-us">About Us</a></li></ul><ul id="6be52899-2810-42fe-ba86-b746af2aeb3a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/company/our-team">Our Team</a></li></ul><ul id="a18f2ee0-e522-44dd-8cf6-38e38a9f30cf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/company/career">Career</a></li></ul><ul id="4faaaa37-9235-40e2-a4e7-f611b08495ae" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/company/partnership">Partnership</a></li></ul><ul id="d93e4c0d-5cd9-43d7-99ca-d89018226551" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/company/patents">Patents</a></li></ul></details></li></ul></div></div><p id="85120435-9775-4a1f-8a0a-2f0a7693ca6e" class="">
+</p><figure id="ba069388-7293-4592-a04b-dd5b8eb1ce4d"><div class="source"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/banner.mp4">https://d12bdyjwv5xtft.cloudfront.net/image/banner.mp4</a></div></figure><hr id="43028f42-057b-4f41-80f5-58608955c5bf"/><figure id="848a15c9-7f77-4a44-91f9-5c9ef3f2a733" class="image"><a href="Untitled%201.png"><img style="width:708px" src="Untitled%201.png"/></a></figure><figure id="2d515242-7af5-418c-889f-e9b107ee8665" class="image"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/MicroscoopG.png"><img src="https://d12bdyjwv5xtft.cloudfront.net/image/MicroscoopG.png"/></a></figure><h1 id="b30d34d4-467f-4d5a-8126-c9c3c56d9793" class=""><strong>Enabling Spatial Biomarker Di</strong></h1><p id="5c449c73-02aa-497b-b83f-88dd7bddf62e" class="">SYNCELL Microscoop™ is a groundbreaking technology that turns a high-content microscope into an automated precision photolabeling machinery that enables researchers to isolate proteins from selected subcellular locations.</p><p id="93119cb6-a808-455c-b96a-33c43f9dffb3" class=""><a href="https://syncell.com/microscoop">https://syncell.com/microscoop</a></p><p id="e1ce04f1-b37a-426d-aaf5-d26218710c26" class="">
+</p><p id="b393b171-2fe3-425d-9550-30ce97363417" class=""><a href="https://syncell.com/microscoop">https://syncell.com/microscoop</a></p><p id="6e214078-3ea7-4733-bf7d-bb5782e9b031" class="">
+</p><p id="a01c981c-8563-4859-a795-8269756b16cd" class=""><a href="https://syncell.com/microscoop">Learn More &gt;</a></p><p id="dd052310-8113-4161-9cc3-de8f90d4b167" class="">
+</p><p id="0bc879b4-ac2f-4477-9ab5-05ab05390bd7" class="">
+</p><h1 id="53340394-7c0a-430f-8481-9945fff7b1c8" class="">The Intricacies of Family: A Closer Look</h1><h2 id="5f406f69-dbfd-44cf-9759-e80d1be21235" class="">Introduction</h2><p id="b847a746-a26f-4657-87df-e319089b5f0f" class="">Family, an institution as old as human existence, has been the cornerstone of society and personal development. The concept of family, its roles, and significance varies greatly across different cultures and societies. Yet, it remains a universal phenomenon, shaping and defining our lives in myriad ways. In this blog post, we delve into three key aspects of the family: its role in character development, the significance of family traditions, and the impact of family dynamics on mental health.</p><h2 id="4ac27c05-03cd-4cb3-b5e8-b655415c3ff8" class="">Family and Character Development</h2><p id="f2b8c945-fa52-490b-83c5-c1c62d82e204" class="">The family is often the first and most influential socializing agent in a person&#x27;s life. It is within the family that we first learn values, norms, and roles that shape our character and worldview. Parents and siblings serve as role models, setting examples of behavior to emulate or avoid. The family environment, whether nurturing or toxic, significantly impacts a person&#x27;s character development. For instance, a child brought up in a loving and supportive family will likely develop confidence, empathy, and resilience, while an unstable family environment might foster insecurity, aggression, or withdrawal.</p><h2 id="ca8eec7f-774d-4ad6-8f40-7723c53b55f1" class="">The Significance of Family Traditions</h2><p id="caac8293-1929-4207-8324-ab68159bd0ec" class="">Family traditions, whether it&#x27;s a grand Thanksgiving dinner or a simple bedtime story ritual, play a crucial role in strengthening family bonds and creating lasting memories. They provide a sense of identity, belonging, and stability. These traditions, passed down from generation to generation, are a vital link to our ancestral heritage and cultural roots. Moreover, they offer opportunities for meaningful interaction and shared experiences, fostering mutual understanding and respect among family members.</p><h2 id="e7ded093-d109-405a-b004-6594408f6301" class="">Family Dynamics and Mental Health</h2><p id="018b7b73-a33b-4dc3-a162-34e9e8f61631" class="">Family dynamics significantly impact the mental health of its members. A harmonious family environment fosters emotional well-being, while constant conflict and dysfunction can lead to stress, anxiety, and depression. Children growing up in families with poor communication, unresolved conflicts, or emotional neglect may struggle with mental health issues into adulthood. On the other hand, a supportive family can serve as a buffer against external stressors and promote resilience. Thus, fostering healthy family dynamics is crucial for the mental well-being of all its members.</p><h2 id="9f7c9817-ad6f-4e41-8a0b-a66dd2f4d4fe" class="">Conclusion</h2><p id="4e6ad16a-73ce-430f-bc4f-85384d54b1f5" class="">Family, with its multifaceted roles and impacts, shapes our lives in profound ways. It is instrumental in character development, preserving cultural heritage through traditions, and influencing our mental health. Despite the complexities and challenges that often come with family relationships, the family remains a pivotal institution in our lives. By understanding the importance of family, we can work towards nurturing healthier family dynamics and fostering an environment of love, support, and mutual respect.</p><h1 id="eb0e9a92-7baf-4746-8672-493e896289a7" class=""><strong>Book a Demo</strong></h1><p id="904c4433-2362-4a3d-9c70-f40cfc358164" class="">Applying optoproteomic technology to unravel complex biology and accelerate disease-associated biomarkers discovery.</p><p id="d6217cce-f9c5-4e60-98c0-6ff3d78d2a69" class=""><a href="https://syncell.com/contact-us">Learn More &gt;</a></p><p id="7e755a14-8060-4935-9fda-e94bd4c23278" class="">
+</p><p id="ed13766d-1e7d-458b-a80e-b01f16c78ff1" class="">High Sensitivity<div class="indented"><p id="a22c3848-8e22-4274-a3a5-60486ea290c6" class=""><strong>The Microscoop™ platform is optimized for the accurate capture of location-specific proteins.</strong></p><figure id="daeb2a12-c58d-4bea-ab67-1dbdcc2084e0" class="image"><a href="syncell-logo2x-icon.png"><img style="width:99px" src="syncell-logo2x-icon.png"/></a></figure></div></p><p id="6d9b1b65-2e37-4980-8f56-409ef6881894" class="">
+</p><p id="b0263da0-08c2-491c-a714-f31bfd02370f" class="">3D Labeling<div class="indented"><p id="2bbb62aa-5f04-4e0c-8ab4-881ae34ae3b1" class=""><strong>3D labeling- Two-photon assisted 3D pattern illumination allows for precise XYZ labeling of biospecimens.</strong></p></div></p><p id="afade0e9-4c82-42b3-8a49-ed590d2fdbab" class="">
+</p><p id="f674f775-e82d-4266-80a1-601d145866be" class="">High Specificity<div class="indented"><p id="04632771-62db-47f3-b6fe-ce16246fe7bd" class=""><strong>Unique combination of AI algorithm, photolabeling and illumination provides excellent precision and scalability for a broad range of cell biology applications.</strong></p></div></p><p id="d813390e-6b9c-4a71-9e91-81cb5fd10e1a" class="">
+</p><p id="44085496-8770-4e90-a2ea-6dbc47113f41" class="">High-Content<div class="indented"><p id="46b73700-c754-4691-8e6f-2d3a4c89e9a1" class=""><strong>Microscoop™ delivers reliable high-content protein labeling capability, allowing users to target tens of thousands of individual cells with speed and ease.</strong></p></div></p><p id="0217910e-b5d3-47d4-a65e-c6c239e9c468" class="">
+</p><p id="3a160ab4-bdae-4404-9866-9fb73b024b67" class="">AI-Driven<div class="indented"><p id="50d7feff-f18a-4492-a44a-4eb50a439b8f" class=""><strong>Custom machine learning software solutions allow users to select different cellular and subcellular structures for image-guided photolabeling.</strong></p></div></p><p id="73ab7fec-0dce-4c81-a04e-e6eff6a3ce13" class="">
+</p><p id="e53c33e5-d0af-4c52-98fe-a01c8086f5f7" class="">Full Integretion<div class="indented"><p id="c63ec9ac-5938-4738-83fd-2a1cbf803d52" class=""><strong>User-friendly GUI integrates imaging and photolabeling seamlessly.</strong></p><p id="6d4611f2-bb38-473e-bf15-da79556fadcb" class="">
+</p><figure id="500b606b-e9ce-4cd8-988b-0815ba81732b" class="image"><a href="Untitled%202.png"><img style="width:1920px" src="Untitled%202.png"/></a></figure><h1 id="9ab35eea-3d9d-4212-bd0c-cd59f38c4313" class=""><strong>Applications</strong></h1><p id="6e3c67fc-6328-436e-aef4-dc661c375d67" class=""><strong>The Most Powerful Platform forSpatial Proteomics Exploration</strong></p><p id="7d4d70ed-6e23-43f2-a1ef-83378e9027cc" class=""><a href="https://syncell.com/contact-us">Learn More &gt;</a></p></div></p><p id="418b73a7-2c5e-45ed-9e96-52516e9634da" class="">
+</p><h1 id="67f95ea8-bba3-4687-a450-a8b29a8ffea7" class=""><strong>Use Microscoop™ to Accelerate Your Spatial Biomarker Research</strong></h1><h1 id="5aa9d692-abe9-44e6-8a6d-4be4b4f76e71" class=""><strong>So You Can Explore Without Limitations</strong></h1><figure id="63e1bdd7-0217-463c-bfca-2943f3e40277" class="image"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/icon-quote-on-dark.png"><img style="width:59px" src="https://d12bdyjwv5xtft.cloudfront.net/image/icon-quote-on-dark.png"/></a></figure><div id="8f0494e1-d699-4166-b4bb-200f4beeb966" class="column-list"><div id="ec1b6f21-43ad-437d-b93e-1ff6cee0e0f4" style="width:50%" class="column"><p id="4879d2e4-ee47-42c0-9525-460f6d1926ab" class=""><strong>“SYNCELL brings multidisciplinary talents together to revolutionize spatial proteomics. We aim to propel our innovations to exceed the demand of our customers in this dynamic and evolving field.“</strong></p><figure id="8ebcd715-e967-469d-b7fd-79e65ff4567e" class="image"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/pic-home-jung-chi.png"><img style="width:104px" src="https://d12bdyjwv5xtft.cloudfront.net/image/pic-home-jung-chi.png"/></a></figure><p id="402e5eb3-7bdb-4aa5-844a-55990c692958" class=""><strong>Jung-Chi Liao, PhD</strong></p><p id="b8465077-f3e6-453f-971d-a99679997adf" class="">Founder &amp; CEO</p></div><div id="adc76f27-5435-4b6a-b905-82df41a05a68" style="width:50%" class="column"><p id="35fc4dda-759f-4a7c-aca2-253227e30966" class=""><strong>&quot;Microscoop revolutionizes cellular research by offering real-time tagging and visualization of cellular patterns, unveiling new proteins for pioneering scientific discoveries&quot;</strong></p><figure id="c83c0bc6-e384-47c1-8c29-45c5f92c5601" class="image"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/chantel_img.png"><img style="width:104px" src="https://d12bdyjwv5xtft.cloudfront.net/image/chantel_img.png"/></a></figure><p id="9f28b582-f934-45ee-879b-6f3df1766e97" class=""><strong>Dr. Chantal Cheung</strong></p><p id="5afc91a3-1113-46a5-aac0-5f740c38adb5" class="">Principal Scientist</p></div></div><div id="9c2fc16e-46fb-4a84-b6c2-12f0d270dbdd" class="column-list"><div id="16746d9f-25f7-4e65-9b61-6f147b9f691d" style="width:50%" class="column"><p id="4bb87d7f-d172-46fe-931e-c79cc5524ea7" class=""><strong>“We pride ourselves on our innovative strength and this is our origin. Microscoop will become an essential spatial proteomics tool with the best precision, capability and performance.”</strong></p><figure id="8aa8c235-df9c-420d-9e75-b60ccbd5d502" class="image"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/pic-home-yi-de.png"><img style="width:104px" src="https://d12bdyjwv5xtft.cloudfront.net/image/pic-home-yi-de.png"/></a></figure><p id="52fcb054-2d50-489f-88de-d5b3453a92cb" class=""><strong>Yi-De Chen</strong></p><p id="68fcc8ef-6c04-4b3d-b187-e5aedb25be84" class="">VP Technology</p></div><div id="23fcc26a-d493-4592-a3ce-b12797ef11dd" style="width:50%" class="column"><p id="c3a5a1fc-73b9-4992-b4e8-13f6a5728826" class=""><strong>“We want to hire the best of the best and people are our most valuable asset to push the boundaries of technology and business.“</strong></p><p id="b6ef8408-b3f9-4e41-9681-a58c77ea4b84" class="">
+</p><figure id="d4d6b7dd-1242-4814-8042-2bfc54817bf5" class="image"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/pic-home-ya-lan.png"><img style="width:104px" src="https://d12bdyjwv5xtft.cloudfront.net/image/pic-home-ya-lan.png"/></a></figure><p id="1fbb2d52-356a-48e8-a09c-9e5f8774d434" class=""><strong>Ya-Lan Hsieh</strong></p><p id="231dc458-52ed-48fa-ac6e-117e3c2e6999" class="">VP Administration</p></div></div><p id="f3c48a0b-3076-4f55-9bc8-dffd0e59b2d9" class="">
+</p><p id="633c2555-8c6d-4b4b-8c76-8ac42c4fce7a" class="">
+</p><div id="96ee02d8-d028-4175-b8c3-5e9af07337c2" class="column-list"><div id="57e448f4-223c-488a-82d2-3a405de27d57" style="width:50%" class="column"><h2 id="abda84ee-84e2-4dd4-9058-43e3e44543ea" class=""><strong><strong>The Latest News</strong></strong></h2></div><div id="a8f7bae3-5ec6-4e6d-98c4-3a950f8720ea" style="width:50%" class="column"><p id="6ec8bda8-e75a-4908-b1d2-48fa42b41284" class="">
+</p></div></div><p id="66331d7f-f371-4771-848c-bbb97c1a144c" class="">2024-03-28</p><p id="3396e145-057f-41ef-837d-4369f9eaba3c" class="">AACR Annual Meeting 2024 - Spatial Proteomic Disco...</p><p id="e1d05dcf-22f5-4328-a987-c59e542fcb56" class="">2023-11-27</p><p id="a5fe273a-50b0-4df6-a43a-515cf89cb659" class="">Syncell Showcases Pioneering Microscopy-Guided Sub...</p><p id="d94696f1-40d8-437f-9093-4a121d970b2e" class="">2023-08-31</p><p id="4fce8959-f1dd-4018-aa19-c59b332618a8" class="">New York Structural Biology Center and Syncell Ann...</p><h1 id="e8150b83-4577-4dc2-b600-8c387eccd260" class=""><strong>Events</strong></h1><p id="ddc35819-6a07-443f-ba4d-c6350c6a6ee4" class=""><a href="https://syncell.com/news#events">More Events &gt;</a></p><p id="8191a32f-503b-40be-97f2-2e359586be33" class=""><strong>DEC/02 - 06/2023</strong></p><p id="52c6045d-1201-4442-a2f3-6ebbb5dec3d7" class=""><strong>ASCB 2023Boston, MA</strong></p><p id="71b9b4a5-8543-4d16-b978-fc8cf1848cf1" class=""><strong>NOV/11 - 15/2023</strong></p><p id="80b59651-94a3-4147-87ce-2b1c51a9c217" class=""><strong>SfN 2023Washington, D.C.</strong></p><p id="c571151a-6ce5-49c7-8e6a-cfe833e4cfca" class=""><strong>MAY/07 - 10/2023</strong></p><p id="755940f0-12a5-4890-ae9d-ee68ed9e5aac" class=""><strong>ABRF 2023Booth #105Boston, MA</strong></p><p id="089e8f3f-019f-4eb6-9b31-a94ffe1924cd" class="">
+</p><p id="511a4302-df1f-4c65-bcf5-c5ee29ad3e63" class="">
+</p><p id="44ffb8ff-c179-47ac-893a-cd6d447352b9" class=""><strong>Our NewslettersStay connected with SYNCELL to receive the latest news</strong></p><p id="b3f6798d-2514-4c9b-9176-622a5644808e" class=""><a href="https://syncell.com/contact-us">SIGN UP NOW</a></p><p id="dec643e3-5a2b-45d9-a0a1-38df525f2f1b" class="">
+</p><p id="ddf49d88-581e-48c9-8357-b08a29738146" class="">
+</p><h3 id="ea1a1146-0811-436a-9f5e-fee4edd91164" class=""><strong>Products</strong></h3><ul id="39a326e7-069c-483c-85aa-5cf1e1c4c88a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/microscoop">Microscoop™</a></li></ul><ul id="15225762-f561-4dad-b1c7-12d5b0096bdc" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/products/reagents">Reagents</a></li></ul><h3 id="f74c4494-24c7-496b-87d0-38a2062febab" class=""><strong>Applications</strong></h3><ul id="e7de1519-e432-4d02-9736-90fb5768be12" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/workflow">Workflow</a></li></ul><ul id="35a206a3-5176-4280-b940-361bb8b3f369" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/oncology">Oncology</a></li></ul><ul id="d377c5e7-e981-45e0-bba3-a78d3463fb2a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/cancer">Cancer Immunotherapy</a></li></ul><ul id="a4481846-2357-4af8-9972-cf37786c4d5a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/neuroscience">Neuroscience</a></li></ul><ul id="4ba936d4-bc35-45d0-86a8-33baec6fa4a1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/immunology">Inflammatory Disease</a></li></ul><ul id="07a7703b-2d06-407c-996c-bcc5b2ce633d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/infectious_disease">Infectious Disease</a></li></ul><ul id="c6c6a440-0c3b-4db7-a1cc-88be5d9af502" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/application/developmental">Development Biology</a></li></ul><h3 id="483cfd68-9b58-475b-9fd5-ddafae9bf21f" class=""><strong>Resources</strong></h3><ul id="137b3eb2-718e-40e9-8042-f8d75185b107" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/resources/references">References</a></li></ul><ul id="30c4ea18-befe-45ed-9eaf-d743d1f5ba86" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/blog">Blogs</a></li></ul><ul id="cd5df698-08ed-4536-a477-d8b18e5ef352" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/resources/brochure">Brochure</a></li></ul><ul id="9d1f4e7e-3ec0-4e29-9cba-41c10bf1f30d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/resources/videos">Videos</a></li></ul><ul id="d94d5cd1-2a75-4ace-8e72-e91c17dcecb2" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/service/faq">FAQ</a></li></ul><p id="a0e288b6-8921-43e4-bb95-cf78b3602dfd" class=""><a href="https://syncell.com/news"><strong><strong>News &amp; Events</strong></strong></a></p><h3 id="54481311-9423-4618-bd04-deaf8fe54080" class=""><strong>Company</strong></h3><ul id="a3c397bf-062c-4363-b78d-d8e6d0cd7313" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/company/about-us">About Us</a></li></ul><ul id="9552b1c4-e21c-4d9d-b08d-328522bd49d4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/company/our-team">Our Team</a></li></ul><ul id="403a7043-5d4c-4eec-968f-9e746d8af0ef" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/company/career">Careers</a></li></ul><ul id="9e48a2ba-91d3-4095-8efb-c9e060ff5b2d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/company/partnership">Partnerships</a></li></ul><ul id="07b9fc2c-9a45-4424-a9fa-4591a7120a61" class="bulleted-list"><li style="list-style-type:disc"><a href="https://syncell.com/company/patents">Patents</a></li></ul><p id="b67ee600-551b-4565-ae35-198152799f65" class=""><a href="https://syncell.com/contact-us"><strong><strong>Contact Us</strong></strong></a></p><figure id="8089a076-f470-4bd7-989f-c8794cc20d92" class="image" style="text-align:center"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/syncell-logo@2x.png"><img style="width:96px" src="https://d12bdyjwv5xtft.cloudfront.net/image/syncell-logo@2x.png"/></a></figure><p id="2d5812e6-690e-49e8-b5d8-fb4cd556a9d4" class=""><a href="mailto:Info@syncell.com">Info@syncell.com</a></p><figure id="f07b9bda-4af7-4bad-83d1-dad02465860c" class="image"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/icon-email.png"><img style="width:60px" src="https://d12bdyjwv5xtft.cloudfront.net/image/icon-email.png"/></a></figure><p id="49870051-49c8-4ecf-bd6f-122d9370282b" class="">617-631-2746</p><figure id="b3bbfca0-fb2b-44f4-89e8-24de58f1c650" class="image"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/icon-phone.png"><img style="width:60px" src="https://d12bdyjwv5xtft.cloudfront.net/image/icon-phone.png"/></a></figure><hr id="3ff70caf-7f17-4ac6-bfd1-06dd8ec5f1c7"/><p id="f664944f-264a-4aea-ab0c-324e3b8be544" class="">200 Dexter Ave, Watertown, MA 02472, USA</p><figure id="6cbab3c7-b983-4ccd-b9b6-c4a3ef441d05" class="image"><a href="https://d12bdyjwv5xtft.cloudfront.net/image/icon-address.png"><img style="width:60px" src="https://d12bdyjwv5xtft.cloudfront.net/image/icon-address.png"/></a></figure><hr id="1f9e4c99-81d8-4922-9f7b-fffce1cccef2"/><hr id="45199c82-2c51-435c-9791-6057bbedc612"/><p id="1f177650-125b-4a17-a4c0-ab8d687aeb09" class="">Terms and Conditions ｜ Privacy Policy</p><hr id="5b773fe1-7d25-454e-a517-bf4a51954f34"/><hr id="83b4ad1f-ac1d-4bde-9cf2-4b0a26dcd68d"/><ul id="4a29abac-d7d3-4aef-b3eb-ac89584e7422" class="bulleted-list"><li style="list-style-type:disc">Copyright © 2024 All Rights Reserved. Syncell and Microscoop™ are trademarks of SYNCELL, Inc., in the United States and/or other countries.</li></ul><ul id="577dcbe2-7f29-4c34-b706-47bd1c06f4e7" class="bulleted-list"><li style="list-style-type:disc">For Research Use Only. Not for use in diagnostic procedures.</li></ul><p id="9a4c64b3-a502-4793-bd25-57cbe7baa12e" class="">
+</p><p id="625b36ad-9544-4962-a8f3-fdda15fa440b" class="">
+</p><figure id="df4beff7-3e3c-4529-af03-3fedc56d4f5e" class="image"><a href="Untitled%203.png"><img style="width:1920px" src="Untitled%203.png"/></a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
